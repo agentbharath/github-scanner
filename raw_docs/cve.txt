@@ -1,0 +1,1695 @@
+--- CVE ENTRY ---
+CVE ID: CVE-2008-4099
+Package: requests
+Severity: UNKNOWN (6.4)
+Affected Versions: Not specified
+Description: PyDNS (aka python-dns) before 2.3.1-4 in Debian GNU/Linux does not use random source ports or transaction IDs for DNS requests, which makes it easier for remote attackers to spoof DNS responses, a different vulnerability than CVE-2008-1447.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2008-4126
+Package: requests
+Severity: UNKNOWN (6.4)
+Affected Versions: Not specified
+Description: PyDNS (aka python-dns) before 2.3.1-5 in Debian GNU/Linux does not use random source ports for DNS requests and does not use random transaction IDs for DNS retries, which makes it easier for remote attackers to spoof DNS responses, a different vulnerability than CVE-2008-1447.  NOTE: this vulnerability exists because of an incomplete fix for CVE-2008-4099.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2011-1364
+Package: requests
+Severity: UNKNOWN (6.8)
+Affected Versions: Not specified
+Description: Cross-site request forgery (CSRF) vulnerability in _ah/admin/interactive/execute (aka the Interactive Console) in the SDK Console (aka Admin Console) in the Google App Engine Python SDK before 1.5.4 allows remote attackers to hijack the authentication of administrators for requests that execute arbitrary Python code via the code parameter.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-0105
+Package: requests
+Severity: UNKNOWN (6.0)
+Affected Versions: Not specified
+Description: The auth_token middleware in the OpenStack Python client library for Keystone (aka python-keystoneclient) before 0.7.0 does not properly retrieve user tokens from memcache, which allows remote authenticated users to gain privileges in opportunistic circumstances via a large number of requests, related to an "interaction between eventlet and python-memcached."
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-1829
+Package: requests
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: Requests (aka python-requests) before 2.3.0 allows remote servers to obtain a netrc password by reading the Authorization header in a redirected request.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-1830
+Package: requests
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: Requests (aka python-requests) before 2.3.0 allows remote servers to obtain sensitive information by reading the Proxy-Authorization header in a redirected request.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2016-6581
+Package: requests
+Severity: HIGH (7.5)
+Affected Versions: Not specified
+Description: A HTTP/2 implementation built using any version of the Python HPACK library between v1.0.0 and v2.2.0 could be targeted for a denial of service attack, specifically a so-called "HPACK Bomb" attack. This attack occurs when an attacker inserts a header field that is exactly the size of the HPACK dynamic header table into the dynamic header table. The attacker can then send a header block that is simply repeated requests to expand that field in the dynamic table. This can lead to a gigantic compression ratio of 4,096 or better, meaning that 16kB of data can decompress to 64MB of data on the target machine.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2018-18074
+Package: requests
+Severity: HIGH (7.5)
+Affected Versions:  to 2.20.0
+Description: The Requests package before 2.20.0 for Python sends an HTTP Authorization header to an http URI upon receiving a same-hostname https-to-http redirect, which makes it easier for remote attackers to discover credentials by sniffing the network.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-4409
+Package: requests
+Severity: CRITICAL (9.8)
+Affected Versions:  to 1.7.15
+Description: An eval() vulnerability exists in Python Software Foundation Djblets 0.7.21 and Beanbag Review Board before 1.7.15 when parsing JSON requests.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2016-1000110
+Package: requests
+Severity: MEDIUM (6.1)
+Affected Versions: 2.7.0 to 2.7.13, 3.3.0 to 3.3.7, 3.4.0 to 3.4.6, 3.5.0 to 3.5.3
+Description: The CGIHandler class in Python before 2.7.12 does not protect against the HTTP_PROXY variable name clash in a CGI script, which could allow a remote attacker to redirect HTTP requests.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2015-5306
+Package: flask
+Severity: UNKNOWN (6.8)
+Affected Versions: Not specified
+Description: OpenStack Ironic Inspector (aka ironic-inspector or ironic-discoverd), when debug mode is enabled, might allow remote attackers to access the Flask console and execute arbitrary Python code by triggering an error.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-21241
+Package: flask
+Severity: HIGH (7.4)
+Affected Versions: 3.3.0 to 3.4.5
+Description: The Python "Flask-Security-Too" package is used for adding security features to your Flask application. It is an is a independently maintained version of Flask-Security based on the 3.0.0 version of Flask-Security. In Flask-Security-Too from version 3.3.0 and before version 3.4.5, the /login and /change endpoints can return the authenticated user's authentication token in response to a GET request. Since GET requests aren't protected with a CSRF token, this could lead to a malicious 3rd party site acquiring the authentication token. Version 3.4.5 and version 4.0.0 are patched. As a workaround, if you aren't using authentication tokens - you can set the SECURITY_TOKEN_MAX_AGE to "0" (seconds) which should make the token unusable.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-33026
+Package: flask
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: The Flask-Caching extension through 1.10.1 for Flask relies on Pickle for serialization, which may lead to remote code execution or local privilege escalation. If an attacker gains access to cache storage (e.g., filesystem, Memcached, Redis, etc.), they can construct a crafted payload, poison the cache, and execute Python code. NOTE: a third party indicates that exploitation is extremely unlikely unless the machine is already compromised; in other cases, the attacker would be unable to write their payload to the cache and generate the required collision
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-32618
+Package: flask
+Severity: LOW (3.1)
+Affected Versions: Not specified
+Description: The Python "Flask-Security-Too" package is used for adding security features to your Flask application. It is an is an independently maintained version of Flask-Security based on the 3.0.0 version of Flask-Security. All versions of Flask-Security-Too allow redirects after many successful views (e.g. /login) by honoring the ?next query param. There is code in FS to validate that the url specified in the next parameter is either relative OR has the same netloc (network location) as the requesting URL. This check utilizes Pythons urlsplit library. However many browsers are very lenient on the kind of URL they accept and 'fill in the blanks' when presented with a possibly incomplete URL. As a concrete example - setting http://login?next=\\\github.com will pass FS's relative URL check however many browsers will gladly convert this to http://github.com. Thus an attacker could send such a link to an unwitting user, using a legitimate site and have it redirect to whatever site they want. This is considered a low severity due to the fact that if Werkzeug is used (which is very common with Flask applications) as the WSGI layer, it by default ALWAYS ensures that the Location header is absolute - thus making this attack vector mute. It is possible for application writers to modify this default behavior by setting the 'autocorrect_location_header=False`.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-31177
+Package: flask
+Severity: LOW (2.7)
+Affected Versions:  to 4.1.3
+Description: Flask-AppBuilder is an application development framework built on top of Flask python framework. In versions prior to 4.1.3 an authenticated Admin user could query other users by their salted and hashed passwords strings. These filters could be made by using partial hashed password strings. The response would not include the hashed passwords, but an attacker could infer partial password hashes and their respective users. This issue has been fixed in version 4.1.3. Users are advised to upgrade. There are no known workarounds for this issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-33175
+Package: flask
+Severity: CRITICAL (9.1)
+Affected Versions: 2.0.1 to 
+Description: ToUI is a Python package for creating user interfaces (websites and desktop apps) from HTML. ToUI is using Flask-Caching (SimpleCache) to store user variables. Websites that use `Website.user_vars` property. It affects versions 2.0.1 to 2.4.0. This issue has been patched in version 2.4.1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-42079
+Package: flask
+Severity: MEDIUM (6.2)
+Affected Versions:  to 6.0.0.355
+Description: An authenticated administrator is able to prepare an alert that is able to execute an SSRF attack. This is exclusively with POST requests.
+
+POC
+
+Step 1: Prepare the SSRF with a request like this:
+
+GET /qstorapi/alertConfigSet?senderEmailAddress=a&smtpServerIpAddress=BURPCOLLABHOST&smtpServerPort=25&smtpUsername=a&smtpPassword=1&smtpAuthType=1&customerSupportEmailAddress=1&poolFreeSpaceWarningThreshold=1&poolFreeSpaceAlertThreshold=1&poolFreeSpaceCriticalAlertThreshold=1&pagerDutyServiceKey=1&slackWebhookUrl=http://<target>&enableAlertTypes&enableAlertTypes=1&disableAlertTypes=1&pauseAlertTypes=1&mattermostWebhookUrl=http://<TARGET>
+HTTP/1.1
+
+Host: <HOSTNAME> 
+Accept-Encoding: gzip, deflate
+
+Accept: */*
+Accept-Language: en
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+
+Connection: close
+
+authorization: Basic <BASIC_AUTH_HASH> 
+Content-Type: application/json
+
+Content-Length: 0
+
+Step 2: Trigger this alert with this request
+
+GET /qstorapi/alertRaise?title=test&message=test&severity=1 
+HTTP/1.1
+
+Host: <HOSTNAME> 
+Accept-Encoding: gzip, deflate
+
+Accept: */*
+
+Accept-Language: en
+
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36
+
+Connection: close
+
+authorization: Basic <BASIC_AUTH_HASH> 
+Content-Type: application/json
+
+Content-Length: 1
+
+The post request received by <TARGET> looks like this:
+{
+ 
+### Python FLASK stuff ####
+
+ 'endpoint': 'index', 
+ 
+'method': 'POST', 
+ 
+'cookies': ImmutableMultiDict([]), 
+ 
+### END Python FLASK stuff ####
+
+ 
+'data': b'{ 
+  "attachments": [ 
+   {
+
+    "fallback": "[122] test / test.",
+
+    "color": "#aa2222",
+
+    "title": "[122] test",
+
+    "text": "test",
+
+    "fields": [   
+     {    
+
+      "title": "Alert Severity",
+        
+      "value": "CRITICAL",
+        
+      "short": false  
+     },  {   
+      "title": "Appliance",     
+      "value": "quantastor (https://<HOSTNAME>)",
+      
+      "short": true  
+
+     },  {    
+
+      "title": "System / Driver / Kernel Ver",    
+
+      "value": "5.10.0.156+a25eaacef / scst-3.5.0-pre / 5.3.0-62-generic",    
+
+      "short": false  
+
+     },  {    
+
+      "title": "System Startup",    
+
+      "value": "Fri Aug  6 16-02-55 2021",    
+
+      "short": true  
+
+          },  {    
+
+      "title": "SSID",    
+
+      "value": "f4823762-1dd1-1333-47a0-6238c474a7e7",    
+
+      "short": true  
+
+     },
+    ],
+
+    "footer": "QuantaStor Call-home Alert",
+
+    "footer_icon": " https://platform.slack-edge.com/img/default_application_icon.png ",
+
+    "ts": 1628461774
+   }
+  ], 
+  "mrkdwn":true 
+ }', 
+ #### FLASK REQUEST STUFF #####
+
+ 'headers': {
+
+  'Host': '<redacted>', 
+  'User-Agent': 'curl/7.58.0', 
+  'Accept': '*/*', 
+  'Content-Type': 'application/json', 
+  'Content-Length': '790'
+
+ }, 
+ 'args': ImmutableMultiDict([]), 
+ 'form': ImmutableMultiDict([]), 
+ 'remote_addr': '217.103.63.173', 
+ 'path': '/payload/58', 
+ 'whois_ip': 'TNF-AS, NL'
+}
+
+#### END FLASK REQUEST STUFF #####
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-49438
+Package: flask
+Severity: MEDIUM (6.1)
+Affected Versions: Not specified
+Description: An open redirect vulnerability in the python package Flask-Security-Too <=5.3.2 allows attackers to redirect unsuspecting users to malicious sites via a crafted URL by abusing the ?next parameter on the /login and /register routes.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-21644
+Package: flask
+Severity: HIGH (7.5)
+Affected Versions: Not specified
+Description: pyLoad is the free and open-source Download Manager written in pure Python. Any unauthenticated user can browse to a specific URL to expose the Flask config, including the `SECRET_KEY` variable. This issue has been patched in version 0.5.0b3.dev77.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-52288
+Package: flask
+Severity: HIGH (7.5)
+Affected Versions: Not specified
+Description: An issue was discovered in the flaskcode package through 0.0.8 for Python. An unauthenticated directory traversal, exploitable with a GET request to a /resource-data/<file_path>.txt URI (from views.py), allows attackers to read arbitrary files.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2011-4137
+Package: django
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: The verify_exists functionality in the URLField implementation in Django before 1.2.7 and 1.3.x before 1.3.1 relies on Python libraries that attempt access to an arbitrary URL with no timeout, which allows remote attackers to cause a denial of service (resource consumption) via a URL associated with (1) a slow response, (2) a completed TCP connection with no application data sent, or (3) a large amount of application data, a related issue to CVE-2011-1521.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-1664
+Package: django
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: The XML libraries for Python 3.4, 3.3, 3.2, 3.1, 2.7, and 2.6, as used in OpenStack Keystone Essex, Folsom, and Grizzly; Compute (Nova) Essex and Folsom; Cinder Folsom; Django; and possibly other products allow remote attackers to cause a denial of service (resource consumption and crash) via an XML Entity Expansion (XEE) attack.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-1665
+Package: django
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: The XML libraries for Python 3.4, 3.3, 3.2, 3.1, 2.7, and 2.6, as used in OpenStack Keystone Essex and Folsom, Django, and possibly other products allow remote attackers to read arbitrary files via an XML external entity declaration in conjunction with an entity reference, aka an XML External Entity (XXE) attack.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-0472
+Package: django
+Severity: UNKNOWN (5.1)
+Affected Versions: Not specified
+Description: The django.core.urlresolvers.reverse function in Django before 1.4.11, 1.5.x before 1.5.6, 1.6.x before 1.6.3, and 1.7.x before 1.7 beta 2 allows remote attackers to import and execute arbitrary Python modules by leveraging a view that constructs URLs using user input and a "dotted Python path."
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2011-4103
+Package: django
+Severity: UNKNOWN (7.5)
+Affected Versions: Not specified
+Description: emitters.py in Django Piston before 0.2.3 and 0.2.x before 0.2.2.1 does not properly deserialize YAML data, which allows remote attackers to execute arbitrary Python code via vectors related to the yaml.load method.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2011-4104
+Package: django
+Severity: UNKNOWN (7.5)
+Affected Versions: Not specified
+Description: The from_yaml method in serializers.py in Django Tastypie before 0.9.10 does not properly deserialize YAML data, which allows remote attackers to execute arbitrary Python code via vectors related to the yaml.load method.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2015-2316
+Package: django
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: The utils.html.strip_tags function in Django 1.6.x before 1.6.11, 1.7.x before 1.7.7, and 1.8.x before 1.8c1, when using certain versions of Python, allows remote attackers to cause a denial of service (infinite loop) by increasing the length of the input string.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2017-16764
+Package: django
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: An exploitable vulnerability exists in the YAML parsing functionality in the read_yaml_file method in io_utils.py in django_make_app 0.1.3. A YAML parser can execute arbitrary Python commands resulting in command execution. An attacker can insert Python into loaded YAML to trigger this vulnerability.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-24583
+Package: django
+Severity: HIGH (7.5)
+Affected Versions: 2.2 to 2.2.16, 3.0 to 3.0.10, 3.1 to 3.1.1
+Description: An issue was discovered in Django 2.2 before 2.2.16, 3.0 before 3.0.10, and 3.1 before 3.1.1 (when Python 3.7+ is used). FILE_UPLOAD_DIRECTORY_PERMISSIONS mode was not applied to intermediate-level directories created in the process of uploading files. It was also not applied to intermediate-level collected static directories when using the collectstatic management command.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-24584
+Package: django
+Severity: HIGH (7.5)
+Affected Versions: 2.2 to 2.2.16, 3.0 to 3.0.10, 3.1 to 3.1.1
+Description: An issue was discovered in Django 2.2 before 2.2.16, 3.0 before 3.0.10, and 3.1 before 3.1.1 (when Python 3.7+ is used). The intermediate-level directories of the filesystem cache had the system's standard umask rather than 0o077.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-6446
+Package: numpy
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: An issue was discovered in NumPy before 1.16.3. It uses the pickle Python module unsafely, which allows remote attackers to execute arbitrary code via a crafted serialized object, as demonstrated by a numpy.load call. NOTE: third parties dispute this issue because it is a behavior that might have legitimate applications in (for example) loading serialized Python object arrays from trusted and authenticated sources.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-33430
+Package: numpy
+Severity: MEDIUM (5.3)
+Affected Versions: 1.9.0 to 
+Description: A Buffer Overflow vulnerability exists in NumPy 1.9.x in the PyArray_NewFromDescr_int function of ctors.c when specifying arrays of large dimensions (over 32) from Python code, which could let a malicious user cause a Denial of Service. NOTE: The vendor does not agree this is a vulneraility; In (very limited) circumstances a user may be able provoke the buffer overflow, the user is most likely already privileged to at least provoke denial of service by exhausting memory. Triggering this further requires the use of uncommon API (complicated structured dtypes), which is very unlikely to be available to an unprivileged user
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-23752
+Package: pandas
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: GenerateSDFPipeline in synthetic_dataframe in PandasAI (aka pandas-ai) through 1.5.17 allows attackers to trigger the generation of arbitrary Python code that is executed by SDFCodeExecutor. An attacker can create a dataframe that provides an English language specification of this Python code. NOTE: the vendor previously attempted to restrict code execution in response to a separate issue, CVE-2023-39660.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-12366
+Package: pandas
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: PandasAI uses an interactive prompt function that is vulnerable to prompt injection and run arbitrary Python code that can lead to Remote Code Execution (RCE) instead of the intended explanation of the natural language processing by the LLM.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-46725
+Package: pandas
+Severity: CRITICAL (9.8)
+Affected Versions:  to 0.53.15
+Description: Langroid is a Python framework to build large language model (LLM)-powered applications. Prior to version 0.53.15, `LanceDocChatAgent` uses pandas eval() through `compute_from_docs()`. As a result, an attacker may be able to make the agent run malicious commands through `QueryPlan.dataframe_calc]`) compromising the host system. Langroid 0.53.15 sanitizes input to the affected function by default to tackle the most common attack vectors, and added several warnings about the risky behavior in the project documentation.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-62703
+Package: pandas
+Severity: HIGH (8.8)
+Affected Versions: Not specified
+Description: Fugue is a unified interface for distributed computing that lets users execute Python, Pandas, and SQL code on Spark, Dask, and Ray with minimal rewrites. In version 0.9.2 and prior, there is a remote code execution vulnerability by pickle deserialization via FlaskRPCServer. The Fugue framework implements an RPC server system for distributed computing operations. In the core functionality of the RPC server implementation, I found that the _decode() function in fugue/rpc/flask.py directly uses cloudpickle.loads() to deserialize data without any sanitization. This creates a remote code execution vulnerability when malicious pickle data is processed by the RPC server. The vulnerability exists in the RPC communication mechanism where the client can send arbitrary serialized Python objects that will be deserialized on the server side, allowing attackers to execute arbitrary code on the victim's machine. This issue has been patched via commit 6f25326.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-1932
+Package: pillow
+Severity: UNKNOWN (4.4)
+Affected Versions: Not specified
+Description: The (1) load_djpeg function in JpegImagePlugin.py, (2) Ghostscript function in EpsImagePlugin.py, (3) load function in IptcImagePlugin.py, and (4) _copy function in Image.py in Python Image Library (PIL) 1.1.7 and earlier and Pillow before 2.3.1 do not properly create temporary files, which allow local users to overwrite arbitrary files and obtain sensitive information via a symlink attack on the temporary file.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-1933
+Package: pillow
+Severity: UNKNOWN (2.1)
+Affected Versions: Not specified
+Description: The (1) JpegImagePlugin.py and (2) EpsImagePlugin.py scripts in Python Image Library (PIL) 1.1.7 and earlier and Pillow before 2.3.1 uses the names of temporary files on the command line, which makes it easier for local users to conduct symlink attacks by listing the processes.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-3007
+Package: pillow
+Severity: UNKNOWN (10.0)
+Affected Versions: Not specified
+Description: Python Image Library (PIL) 1.1.7 and earlier and Pillow 2.3 might allow remote attackers to execute arbitrary commands via shell metacharacters in unspecified vectors related to CVE-2014-1932, possibly JpegImagePlugin.py.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2014-3589
+Package: pillow
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: PIL/IcnsImagePlugin.py in Python Imaging Library (PIL) and Pillow before 2.3.2 and 2.5.x before 2.5.2 allows remote attackers to cause a denial of service via a crafted block size.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2016-2533
+Package: pillow
+Severity: MEDIUM (6.5)
+Affected Versions: Not specified
+Description: Buffer overflow in the ImagingPcdDecode function in PcdDecode.c in Pillow before 3.1.1 and Python Imaging Library (PIL) 1.1.7 and earlier allows remote attackers to cause a denial of service (crash) via a crafted PhotoCD file.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-19911
+Package: pillow
+Severity: HIGH (7.5)
+Affected Versions:  to 6.2.2
+Description: There is a DoS vulnerability in Pillow before 6.2.2 caused by FpxImagePlugin.py calling the range function on an unvalidated 32-bit integer if the number of bands is large. On Windows running 32-bit Python, this results in an OverflowError or MemoryError due to the 2 GB limit. However, on Linux running 64-bit Python this results in the process being terminated by the OOM killer.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-34552
+Package: pillow
+Severity: CRITICAL (9.8)
+Affected Versions: 1.0 to , 1.2 to 
+Description: Pillow through 8.2.0 and PIL (aka Python Imaging Library) through 1.1.7 allow an attacker to pass controlled parameters directly into a convert function to trigger a buffer overflow in Convert.c.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-22817
+Package: pillow
+Severity: CRITICAL (9.8)
+Affected Versions:  to 9.0.1
+Description: PIL.ImageMath.eval in Pillow before 9.0.0 allows evaluation of arbitrary expressions, such as ones that use the Python exec method. A lambda expression could also be used.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-48379
+Package: pillow
+Severity: HIGH (7.1)
+Affected Versions: Not specified
+Description: Pillow is a Python imaging library. In versions 11.2.0 to before 11.3.0, there is a heap buffer overflow when writing a sufficiently large (>64k encoded with default settings) image in the DDS format due to writing into a buffer without checking for available space. This only affects users who save untrusted data as a compressed DDS image. This issue has been patched in version 11.3.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-25990
+Package: pillow
+Severity: HIGH (7.5)
+Affected Versions: 10.3.0 to 12.1.1
+Description: Pillow is a Python imaging library. From 10.3.0 to before 12.1.1, n out-of-bounds write may be triggered when loading a specially crafted PSD image. This vulnerability is fixed in 12.1.1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-30034
+Package: celery
+Severity: HIGH (8.6)
+Affected Versions:  to 1.2.0
+Description: Flower, a web UI for the Celery Python RPC framework, all versions as of 05-02-2022 is vulnerable to an OAuth authentication bypass. An attacker could then access the Flower API to discover and invoke arbitrary Celery RPC calls or deny service by shutting down Celery task nodes.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-7459
+Package: cryptography
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: Heap-based buffer overflow in the ALGnew function in block_templace.c in Python Cryptography Toolkit (aka pycrypto) allows remote attackers to execute arbitrary code as demonstrated by a crafted iv parameter to cryptmsg.py.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-36242
+Package: cryptography
+Severity: CRITICAL (9.1)
+Affected Versions:  to 3.3.2
+Description: In the cryptography package before 3.3.2 for Python, certain sequences of update calls to symmetrically encrypt multi-GB values could result in an integer overflow and buffer overflow, as demonstrated by the Fernet class.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-23931
+Package: cryptography
+Severity: MEDIUM (4.8)
+Affected Versions: 1.8 to 39.0.1
+Description: cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. In affected versions `Cipher.update_into` would accept Python objects which implement the buffer protocol, but provide only immutable buffers. This would allow immutable objects (such as `bytes`) to be mutated, thus violating fundamental rules of Python and resulting in corrupted output. This now correctly raises an exception. This issue has been present since `update_into` was originally introduced in cryptography 1.8.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-38325
+Package: cryptography
+Severity: HIGH (7.5)
+Affected Versions: 40.0.0 to 41.0.2
+Description: The cryptography package before 41.0.2 for Python mishandles SSH certificates that have critical options.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-49083
+Package: cryptography
+Severity: MEDIUM (5.9)
+Affected Versions: 3.1 to 41.0.6
+Description: cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. Calling `load_pem_pkcs7_certificates` or `load_der_pkcs7_certificates` could lead to a NULL-pointer dereference and segfault. Exploitation of this vulnerability poses a serious risk of Denial of Service (DoS) for any application attempting to deserialize a PKCS7 blob/certificate. The consequences extend to potential disruptions in system availability and stability. This vulnerability has been patched in version 41.0.6.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-23342
+Package: cryptography
+Severity: HIGH (7.4)
+Affected Versions: Not specified
+Description: The `ecdsa` PyPI package is a pure Python implementation of ECC (Elliptic Curve Cryptography) with support for ECDSA (Elliptic Curve Digital Signature Algorithm), EdDSA (Edwards-curve Digital Signature Algorithm) and ECDH (Elliptic Curve Diffie-Hellman). Versions 0.18.0 and prior are vulnerable to the Minerva attack. As of time of publication, no known patched version exists.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-26130
+Package: cryptography
+Severity: HIGH (7.5)
+Affected Versions: 38.0.0 to 42.0.4
+Description: cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. Starting in version 38.0.0 and prior to version 42.0.4, if `pkcs12.serialize_key_and_certificates` is called with both a certificate whose public key did not match the provided private key and an `encryption_algorithm` with `hmac_hash` set (via `PrivateFormat.PKCS12.encryption_builder().hmac_hash(...)`, then a NULL pointer dereference would occur, crashing the Python process. This has been resolved in version 42.0.4, the first version in which a `ValueError` is properly raised.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-26007
+Package: cryptography
+Severity: MEDIUM (6.5)
+Affected Versions:  to 46.0.5
+Description: cryptography is a package designed to expose cryptographic primitives and recipes to Python developers. Prior to 46.0.5, the public_key_from_numbers (or EllipticCurvePublicNumbers.public_key()), EllipticCurvePublicNumbers.public_key(), load_der_public_key() and load_pem_public_key() functions do not verify that the point belongs to the expected prime-order subgroup of the curve. This missing validation allows an attacker to provide a public key point P from a small-order subgroup. This can lead to security issues in various situations, such as the most commonly used signature verification (ECDSA) and shared key negotiation (ECDH). When the victim computes the shared secret as S = [victim_private_key]P via ECDH, this leaks information about victim_private_key mod (small_subgroup_order). For curves with cofactor > 1, this reveals the least significant bits of the private key. When these weak public keys are used in ECDSA , it's easy to forge signatures on the small subgroup. Only SECT curves are impacted by this. This vulnerability is fixed in 46.0.5.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-28490
+Package: cryptography
+Severity: MEDIUM (6.5)
+Affected Versions:  to 1.6.9
+Description: Authlib is a Python library which builds OAuth and OpenID Connect servers. Prior to version 1.6.9, a cryptographic padding oracle vulnerability was identified in the Authlib Python library concerning the implementation of the JSON Web Encryption (JWE) RSA1_5 key management algorithm. Authlib registers RSA1_5 in its default algorithm registry without requiring explicit opt-in, and actively destroys the constant-time Bleichenbacher mitigation that the underlying cryptography library implements correctly. This issue has been patched in version 1.6.9.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-1747
+Package: pyyaml
+Severity: CRITICAL (9.8)
+Affected Versions: 5.1 to 5.3.1
+Description: A vulnerability was discovered in the PyYAML library in versions before 5.3.1, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. An attacker could use this flaw to execute arbitrary code on the system by abusing the python/object/new constructor.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-14343
+Package: pyyaml
+Severity: CRITICAL (9.8)
+Affected Versions: 5.1 to 5.4
+Description: A vulnerability was discovered in the PyYAML library in versions before 5.4, where it is susceptible to arbitrary code execution when it processes untrusted YAML files through the full_load method or with the FullLoader loader. Applications that use the library to process untrusted input may be vulnerable to this flaw. This flaw allows an attacker to execute arbitrary code on the system by abusing the python/object/new constructor. This flaw is due to an incomplete fix for CVE-2020-1747.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-50460
+Package: pyyaml
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: A remote code execution (RCE) vulnerability exists in the ms-swift project version 3.3.0 due to unsafe deserialization in tests/run.py using yaml.load() from the PyYAML library (versions = 5.3.1). If an attacker can control the content of the YAML configuration file passed to the --run_config parameter, arbitrary code can be executed during deserialization. This can lead to full system compromise. The vulnerability is triggered when a malicious YAML file is loaded, allowing the execution of arbitrary Python commands such as os.system(). It is recommended to upgrade PyYAML to version 5.4 or higher, and to use yaml.safe_load() to mitigate the issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-43837
+Package: jinja2
+Severity: HIGH (8.4)
+Affected Versions: 0.7.0 to 3.0.0
+Description: vault-cli is a configurable command-line interface tool (and python library) to interact with Hashicorp Vault. In versions before 3.0.0 vault-cli features the ability for rendering templated values. When a secret starts with the prefix `!template!`, vault-cli interprets the rest of the contents of the secret as a Jinja2 template. Jinja2 is a powerful templating engine and is not designed to safely render arbitrary templates. An attacker controlling a jinja2 template rendered on a machine can trigger arbitrary code, making this a Remote Code Execution (RCE) risk. If the content of the vault can be completely trusted, then this is not a problem. Otherwise, if your threat model includes cases where an attacker can manipulate a secret value read from the vault using vault-cli, then this vulnerability may impact you. In 3.0.0, the code related to interpreting vault templated secrets has been removed entirely. Users are advised to upgrade as soon as possible. For users unable to upgrade a workaround does exist. Using the environment variable `VAULT_CLI_RENDER=false` or the flag `--no-render` (placed between `vault-cli` and the subcommand, e.g. `vault-cli --no-render get-all`) or adding `render: false` to the vault-cli configuration yaml file disables rendering and removes the vulnerability. Using the python library, you can use: `vault_cli.get_client(render=False)` when creating your client to get a client that will not render templated secrets and thus operates securely.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-56363
+Package: jinja2
+Severity: HIGH (7.8)
+Affected Versions: Not specified
+Description: APTRS (Automated Penetration Testing Reporting System) is a Python and Django-based automated reporting tool designed for penetration testers and security organizations. In 1.0, there is a vulnerability in the web application's handling of user-supplied input that is incorporated into a Jinja2 template. Specifically, when user input is improperly sanitized or validated, an attacker can inject Jinja2 syntax into the template, causing the server to execute arbitrary code. For example, an attacker might be able to inject expressions like {{ config }}, {{ self.class.mro[1].subclasses() }}, or more dangerous payloads that trigger execution of arbitrary Python code. The vulnerability can be reproduced by submitting crafted input to all the template fields handled by ckeditor, that are passed directly to a Jinja2 template. If the input is rendered without sufficient sanitization, it results in the execution of malicious Jinja2 code on the server.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-49142
+Package: jinja2
+Severity: HIGH (7.1)
+Affected Versions:  to 1.6.32, 2.0.0 to 2.4.10
+Description: Nautobot is a Network Source of Truth and Network Automation Platform. All users of Nautobot versions prior to 2.4.10 or prior to 1.6.32 are potentially affected. Due to insufficient security configuration of the Jinja2 templating feature used in computed fields, custom links, etc. in Nautobot, a malicious user could configure this feature set in ways that could expose the value of Secrets defined in Nautobot when the templated content is rendered or that could call Python APIs to modify data within Nautobot when the templated content is rendered, bypassing the object permissions assigned to the viewing user. Nautobot versions 1.6.32 and 2.4.10 will include fixes for the vulnerability. The vulnerability can be partially mitigated by configuring object permissions appropriately to limit certain actions to only trusted users.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-33154
+Package: jinja2
+Severity: HIGH (7.5)
+Affected Versions: Not specified
+Description: dynaconf is a configuration management tool for Python. Prior to version 3.2.13, Dynaconf is vulnerable to Server-Side Template Injection (SSTI) due to unsafe template evaluation in the @Jinja resolver. When the jinja2 package is installed, Dynaconf evaluates template expressions embedded in configuration values without a sandboxed environment. This issue has been patched in version 3.2.13.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-32618
+Package: werkzeug
+Severity: LOW (3.1)
+Affected Versions: Not specified
+Description: The Python "Flask-Security-Too" package is used for adding security features to your Flask application. It is an is an independently maintained version of Flask-Security based on the 3.0.0 version of Flask-Security. All versions of Flask-Security-Too allow redirects after many successful views (e.g. /login) by honoring the ?next query param. There is code in FS to validate that the url specified in the next parameter is either relative OR has the same netloc (network location) as the requesting URL. This check utilizes Pythons urlsplit library. However many browsers are very lenient on the kind of URL they accept and 'fill in the blanks' when presented with a possibly incomplete URL. As a concrete example - setting http://login?next=\\\github.com will pass FS's relative URL check however many browsers will gladly convert this to http://github.com. Thus an attacker could send such a link to an unwitting user, using a legitimate site and have it redirect to whatever site they want. This is considered a low severity due to the fact that if Werkzeug is used (which is very common with Flask applications) as the WSGI layer, it by default ALWAYS ensures that the Location header is absolute - thus making this attack vector mute. It is possible for application writers to modify this default behavior by setting the 'autocorrect_location_header=False`.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-25577
+Package: werkzeug
+Severity: HIGH (7.5)
+Affected Versions:  to 2.2.3
+Description: Werkzeug is a comprehensive WSGI web application library. Prior to version 2.2.3, Werkzeug's multipart form data parser will parse an unlimited number of parts, including file parts. Parts can be a small amount of bytes, but each requires CPU time to parse and may use more memory as Python data. If a request can be made to an endpoint that accesses `request.data`, `request.form`, `request.files`, or `request.get_data(parse_form_data=False)`, it can cause unexpectedly high resource usage. This allows an attacker to cause a denial of service by sending crafted multipart data to an endpoint that will parse it. The amount of CPU time required can block worker processes from handling legitimate requests. The amount of RAM required can trigger an out of memory kill of the process. Unlimited file parts can use up memory and file handles. If many concurrent requests are sent continuously, this can exhaust or kill all available workers. Version 2.2.3 contains a patch for this issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-49766
+Package: werkzeug
+Severity: MEDIUM (5.3)
+Affected Versions:  to 3.0.6
+Description: Werkzeug is a Web Server Gateway Interface web application library. On Python < 3.11 on Windows, os.path.isabs() does not catch UNC paths like //server/share. Werkzeug's safe_join() relies on this check, and so can produce a path that is not safe, potentially allowing unintended access to data. Applications using Python >= 3.11, or not using Windows, are not vulnerable. Werkzeug version 3.0.6 contains a patch.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2016-9015
+Package: urllib3
+Severity: LOW (3.7)
+Affected Versions: Not specified
+Description: Versions 1.17 and 1.18 of the Python urllib3 library suffer from a vulnerability that can cause them, in certain configurations, to not correctly validate TLS certificates. This places users of the library with those configurations at risk of man-in-the-middle and information leakage attacks. This vulnerability affects users using versions 1.17 and 1.18 of the urllib3 library, who are using the optional PyOpenSSL support for TLS instead of the regular standard library TLS backend, and who are using OpenSSL 1.1.0 via PyOpenSSL. This is an extremely uncommon configuration, so the security impact of this vulnerability is low.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-11236
+Package: urllib3
+Severity: MEDIUM (6.1)
+Affected Versions: Not specified
+Description: In the urllib3 library through 1.24.1 for Python, CRLF injection is possible if the attacker controls the request parameter.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-11324
+Package: urllib3
+Severity: HIGH (7.5)
+Affected Versions:  to 1.24.2
+Description: The urllib3 library before 1.24.2 for Python mishandles certain cases where the desired set of CA certificates is different from the OS store of CA certificates, which results in SSL connections succeeding in situations where a verification failure is the correct outcome. This is related to use of the ssl_context, ca_certs, or ca_certs_dir argument.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-7212
+Package: urllib3
+Severity: HIGH (7.5)
+Affected Versions: 1.25.2 to 
+Description: The _encode_invalid_chars function in util/url.py in the urllib3 library 1.25.2 through 1.25.7 for Python allows a denial of service (CPU consumption) because of an inefficient algorithm. The percent_encodings array contains all matches of percent encodings. It is not deduplicated. For a URL of length N, the size of percent_encodings may be up to O(N). The next step (normalize existing percent-encoded bytes) also takes up to O(N) for each step, so the total time is O(N^2). If percent_encodings were deduplicated, the time to compute _encode_invalid_chars would be O(kN), where k is at most 484 ((10+6*2)^2).
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-28363
+Package: urllib3
+Severity: MEDIUM (6.5)
+Affected Versions: 1.26.0 to 1.26.4
+Description: The urllib3 library 1.26.x before 1.26.4 for Python omits SSL certificate validation in some cases involving HTTPS to HTTPS proxies. The initial connection to the HTTPS proxy (if an SSLContext isn't given via proxy_config) doesn't verify the hostname of the certificate. This means certificates for different servers that still validate properly with the default urllib3 SSLContext will be silently accepted.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-43804
+Package: urllib3
+Severity: MEDIUM (5.9)
+Affected Versions:  to 1.26.17, 2.0.0 to 2.0.6
+Description: urllib3 is a user-friendly HTTP client library for Python. urllib3 doesn't treat the `Cookie` HTTP header special or provide any helpers for managing cookies over HTTP, that is the responsibility of the user. However, it is possible for a user to specify a `Cookie` header and unknowingly leak information via HTTP redirects to a different origin if that user doesn't disable redirects explicitly. This issue has been patched in urllib3 version 1.26.17 or 2.0.5.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-45803
+Package: urllib3
+Severity: MEDIUM (4.2)
+Affected Versions:  to 1.26.18, 2.0.0 to 2.0.7
+Description: urllib3 is a user-friendly HTTP client library for Python. urllib3 previously wouldn't remove the HTTP request body when an HTTP redirect response using status 301, 302, or 303 after the request had its method changed from one that could accept a request body (like `POST`) to `GET` as is required by HTTP RFCs. Although this behavior is not specified in the section for redirects, it can be inferred by piecing together information from different sections and we have observed the behavior in other major HTTP client implementations like curl and web browsers. Because the vulnerability requires a previously trusted service to become compromised in order to have an impact on confidentiality we believe the exploitability of this vulnerability is low. Additionally, many users aren't putting sensitive data in HTTP request bodies, if this is the case then this vulnerability isn't exploitable. Both of the following conditions must be true to be affected by this vulnerability: 1. Using urllib3 and submitting sensitive information in the HTTP request body (such as form data or JSON) and 2. The origin service is compromised and starts redirecting using 301, 302, or 303 to a malicious peer or the redirected-to service becomes compromised. This issue has been addressed in versions 1.26.18 and 2.0.7 and users are advised to update to resolve this issue. Users unable to update should disable redirects for services that aren't expecting to respond with redirects with `redirects=False` and disable automatic redirects with `redirects=False` and handle 301, 302, and 303 redirects manually by stripping the HTTP request body.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-37891
+Package: urllib3
+Severity: MEDIUM (4.4)
+Affected Versions:  to 1.26.19, 2.0.0 to 2.2.2
+Description:  urllib3 is a user-friendly HTTP client library for Python. When using urllib3's proxy support with `ProxyManager`, the `Proxy-Authorization` header is only sent to the configured proxy, as expected. However, when sending HTTP requests *without* using urllib3's proxy support, it's possible to accidentally configure the `Proxy-Authorization` header even though it won't have any effect as the request is not using a forwarding proxy or a tunneling proxy. In those cases, urllib3 doesn't treat the `Proxy-Authorization` HTTP header as one carrying authentication material and thus doesn't strip the header on cross-origin redirects. Because this is a highly unlikely scenario, we believe the severity of this vulnerability is low for almost all users. Out of an abundance of caution urllib3 will automatically strip the `Proxy-Authorization` header during cross-origin redirects to avoid the small chance that users are doing this on accident. Users should use urllib3's proxy support or disable automatic redirects to achieve safe processing of the `Proxy-Authorization` header, but we still decided to strip the header by default in order to further protect users who aren't using the correct approach. We believe the number of usages affected by this advisory is low. It requires all of the following to be true to be exploited: 1. Setting the `Proxy-Authorization` header without using urllib3's built-in proxy support. 2. Not disabling HTTP redirects. 3. Either not using an HTTPS origin server or for the proxy or target origin to redirect to a malicious origin. Users are advised to update to either version 1.26.19 or version 2.2.2. Users unable to upgrade may use the `Proxy-Authorization` header with urllib3's `ProxyManager`, disable HTTP redirects using `redirects=False` when sending requests, or not user the `Proxy-Authorization` header as mitigations.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-50181
+Package: urllib3
+Severity: MEDIUM (5.3)
+Affected Versions:  to 2.5.0
+Description: urllib3 is a user-friendly HTTP client library for Python. Prior to 2.5.0, it is possible to disable redirects for all requests by instantiating a PoolManager and specifying retries in a way that disable redirects. By default, requests and botocore users are not affected. An application attempting to mitigate SSRF or open redirect vulnerabilities by disabling redirects at the PoolManager level will remain vulnerable. This issue has been patched in version 2.5.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-50182
+Package: urllib3
+Severity: MEDIUM (5.3)
+Affected Versions: 2.2.0 to 2.5.0
+Description: urllib3 is a user-friendly HTTP client library for Python. Starting in version 2.2.0 and prior to 2.5.0, urllib3 does not control redirects in browsers and Node.js. urllib3 supports being used in a Pyodide runtime utilizing the JavaScript Fetch API or falling back on XMLHttpRequest. This means Python libraries can be used to make HTTP requests from a browser or Node.js. Additionally, urllib3 provides a mechanism to control redirects, but the retries and redirect parameters are ignored with Pyodide; the runtime itself determines redirect behavior. This issue has been patched in version 2.5.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2012-3533
+Package: certifi
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: The python SDK before 3.1.0.6 and CLI before 3.1.0.8 for oVirt 3.1 does not check the server SSL certificate against the client keys, which allows remote attackers to spoof a server via a man-in-the-middle (MITM) attack.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2012-5822
+Package: certifi
+Severity: HIGH (7.4)
+Affected Versions: Not specified
+Description: The contribution feature in Zamboni does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate, related to use of the Python urllib2 library.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2012-5825
+Package: certifi
+Severity: UNKNOWN (5.8)
+Affected Versions: Not specified
+Description: Tweepy does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate, related to use of the Python httplib library.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2012-0861
+Package: certifi
+Severity: UNKNOWN (6.8)
+Affected Versions: Not specified
+Description: The vds_installer in Red Hat Enterprise Virtualization Manager (RHEV-M) before 3.1, when adding a host, uses the -k curl parameter when downloading deployUtil.py and vds_bootstrap.py, which prevents SSL certificates from being validated and allows remote attackers to execute arbitrary Python code via a man-in-the-middle attack.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-4238
+Package: certifi
+Severity: UNKNOWN (4.3)
+Affected Versions: Not specified
+Description: The ssl.match_hostname function in the SSL module in Python 2.6 through 3.4 does not properly handle a '\0' character in a domain name in the Subject Alternative Name field of an X.509 certificate, which allows man-in-the-middle attackers to spoof arbitrary SSL servers via a crafted certificate issued by a legitimate Certification Authority, a related issue to CVE-2009-2408.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-1909
+Package: certifi
+Severity: UNKNOWN (5.8)
+Affected Versions: Not specified
+Description: The Python client in Apache Qpid before 2.2 does not verify that the server hostname matches a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate, which allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-4111
+Package: certifi
+Severity: UNKNOWN (5.8)
+Affected Versions: Not specified
+Description: The Python client library for Glance (python-glanceclient) before 0.10.0 does not properly check the preverify_ok value, which prevents the server hostname from being verified with a domain name in the subject's Common Name (CN) or subjectAltName field of the X.509 certificate and allows man-in-the-middle attackers to spoof SSL servers via an arbitrary valid certificate.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-2099
+Package: certifi
+Severity: UNKNOWN (4.3)
+Affected Versions: Not specified
+Description: Algorithmic complexity vulnerability in the ssl.match_hostname function in Python 3.2.x, 3.3.x, and earlier, and unspecified versions of python-backports-ssl_match_hostname as used for older Python versions, allows remote attackers to cause a denial of service (CPU consumption) via multiple wildcard characters in the common name in a certificate.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-2191
+Package: certifi
+Severity: UNKNOWN (4.3)
+Affected Versions: Not specified
+Description: python-bugzilla before 0.9.0 does not validate X.509 certificates, which allows man-in-the-middle attackers to spoof Bugzilla servers via a crafted certificate.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-6396
+Package: certifi
+Severity: UNKNOWN (5.8)
+Affected Versions: Not specified
+Description: The OpenStack Python client library for Swift (python-swiftclient) 1.0 through 1.9.0 does not verify X.509 certificates from SSL servers, which allows man-in-the-middle attackers to spoof servers and obtain sensitive information via a crafted certificate.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-40897
+Package: setuptools
+Severity: MEDIUM (5.9)
+Affected Versions:  to 65.5.1
+Description: Python Packaging Authority (PyPA) setuptools before 65.5.1 allows remote attackers to cause a denial of service via HTML in a crafted package or custom PackageIndex page. There is a Regular Expression Denial of Service (ReDoS) in package_index.py.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-47273
+Package: setuptools
+Severity: HIGH (8.8)
+Affected Versions:  to 78.1.1
+Description: setuptools is a package that allows users to download, build, install, upgrade, and uninstall Python packages. A path traversal vulnerability in `PackageIndex` is present in setuptools prior to version 78.1.1. An attacker would be allowed to write files to arbitrary locations on the filesystem with the permissions of the process running the Python code, which could escalate to remote code execution depending on the context. Version 78.1.1 fixes the issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2013-5123
+Package: pip
+Severity: MEDIUM (5.9)
+Affected Versions:  to 1.5
+Description: The mirroring support (-M, --use-mirrors) in Python Pip before 1.5 uses insecure DNS querying and authenticity checks which allows attackers to perform man-in-the-middle attacks.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-5252
+Package: pip
+Severity: MEDIUM (5.0)
+Affected Versions: Not specified
+Description: The command-line "safety" package for Python has a potential security issue. There are two Python characteristics that allow malicious code to “poison-pill” command-line Safety package detection routines by disguising, or obfuscating, other malicious or non-secure packages. This vulnerability is considered to be of low severity because the attack makes use of an existing Python condition, not the Safety tool itself. This can happen if: You are running Safety in a Python environment that you don’t trust. You are running Safety from the same Python environment where you have your dependencies installed. Dependency packages are being installed arbitrarily or without proper verification. Users can mitigate this issue by doing any of the following: Perform a static analysis by installing Docker and running the Safety Docker image: $ docker run --rm -it pyupio/safety check -r requirements.txt Run Safety against a static dependencies list, such as the requirements.txt file, in a separate, clean Python environment. Run Safety from a Continuous Integration pipeline. Use PyUp.io, which runs Safety in a controlled environment and checks Python for dependencies without any need to install them. Use PyUp's Online Requirements Checker.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-20916
+Package: pip
+Severity: HIGH (7.5)
+Affected Versions:  to 19.2
+Description: The pip package before 19.2 for Python allows Directory Traversal when a URL is given in an install command, because a Content-Disposition header can have ../ in a filename, as demonstrated by overwriting the /root/.ssh/authorized_keys file. This occurs in _download_http_url in _internal/download.py.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-24105
+Package: pip
+Severity: HIGH (8.4)
+Affected Versions: Not specified
+Description: <p>Depending on configuration of various package managers it is possible for an attacker to insert a malicious package into a package manager's repository which can be retrieved and used during development, build, and release processes. This insertion could lead to remote code execution. We believe this vulnerability affects multiple package managers across multiple languages, including but not limited to: Python/pip, .NET/NuGet, Java/Maven, JavaScript/npm.</p>
+<p><strong>Attack scenarios</strong></p>
+<p>An attacker could take advantage of this ecosystem-wide issue to cause harm in a variety of ways. The original attack scenarios were discovered by Alex Birsan and are detailed in their whitepaper, <a href="https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610">Dependency Confusion: How I Hacked Into Apple, Microsoft and Dozens of Other Companies</a>.</p>
+<ul>
+<li><p>With basic knowledge of the target ecosystems, an attacker could create an empty shell for a package and insert malicious code in the install scripts, give it a high version, and publish it to the public repository. Vulnerable victim machines will download the higher version of the package between the public and private repositories and attempt to install it. Due to code incompatibility it will probably error out upon import or upon compilation, making it easier to detect; however the attacker would have gained code execution by that point.</p>
+</li>
+<li><p>An advanced attacker with some inside knowledge of the target could take a copy of a working package, insert the malicious code (in the package itself or in the install), and then publish it to a public repository. The package will likely install and import correctly, granting the attacker an initial foothold and persistence.</p>
+</li>
+</ul>
+<p>These two methods could affect target organizations at any of these various levels:</p>
+<ul>
+<li>Developer machines</li>
+<li>An entire team if the configuration to import the malicious package is uploaded to a code repository</li>
+<li>Continuous integration pipelines if they pull the malicious packages during the build, test, and/or deploy stages</li>
+<li>Customers, download servers, production services if the malicious code has not been detected</li>
+</ul>
+<p>This remote code execution vulnerability can only be addressed by reconfiguring installation tools and workflows, and not by correcting anything in the package repositories themselves. See the <strong>FAQ</strong> section of this CVE for configuration guidance.</p>
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-21330
+Package: pip
+Severity: LOW (3.1)
+Affected Versions:  to 3.7.4
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. In aiohttp before version 3.7.4 there is an open redirect vulnerability. A maliciously crafted link to an aiohttp-based web-server could redirect the browser to a different website. It is caused by a bug in the `aiohttp.web_middlewares.normalize_path_middleware` middleware. This security problem has been fixed in 3.7.4. Upgrade your dependency using pip as follows "pip install aiohttp >= 3.7.4". If upgrading is not an option for you, a workaround can be to avoid using `aiohttp.web_middlewares.normalize_path_middleware` in your applications.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-21668
+Package: pip
+Severity: HIGH (8.0)
+Affected Versions: 2018.10.9 to 2022.1.8
+Description: pipenv is a Python development workflow tool. Starting with version 2018.10.9 and prior to version 2022.1.8, a flaw in pipenv's parsing of requirements files allows an attacker to insert a specially crafted string inside a comment anywhere within a requirements.txt file, which will cause victims who use pipenv to install the requirements file to download dependencies from a package index server controlled by the attacker. By embedding malicious code in packages served from their malicious index server, the attacker can trigger arbitrary remote code execution (RCE) on the victims' systems. If an attacker is able to hide a malicious `--index-url` option in a requirements file that a victim installs with pipenv, the attacker can embed arbitrary malicious code in packages served from their malicious index server that will be executed on the victim's host during installation (remote code execution/RCE). When pip installs from a source distribution, any code in the setup.py is executed by the install process. This issue is patched in version 2022.1.8. The GitHub Security Advisory contains more information about this vulnerability.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-36467
+Package: pip
+Severity: HIGH (8.0)
+Affected Versions: 1.2.0 to 
+Description: AWS data.all is an open source development framework to help users build a data marketplace on Amazon Web Services. data.all versions 1.2.0 through 1.5.1 do not prevent remote code execution when a user injects Python commands into the ‘Template’ field when configuring a data pipeline. The issue can only be triggered by authenticated users. A fix for this issue is available in data.all version 1.5.2 and later. There is no recommended work around.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-3361
+Package: pip
+Severity: HIGH (7.7)
+Affected Versions:  to 1.28.1
+Description: A flaw was found in Red Hat OpenShift Data Science. When exporting a pipeline from the Elyra notebook pipeline editor as Python DSL or YAML, it reads S3 credentials from the cluster (ds pipeline server) and saves them in plain text in the generated output instead of an ID for a Kubernetes secret.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-41671
+Package: pip
+Severity: HIGH (8.3)
+Affected Versions: Not specified
+Description: Twisted is an event-based framework for internet applications, supporting Python 3.6+. The HTTP 1.0 and 1.1 server provided by twisted.web could process pipelined HTTP requests out-of-order, possibly resulting in information disclosure. This vulnerability is fixed in 24.7.0rc1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-49768
+Package: pip
+Severity: CRITICAL (9.1)
+Affected Versions: 2.0.0 to 3.0.1
+Description: Waitress is a Web Server Gateway Interface server for Python 2 and 3. A remote client may send a request that is exactly recv_bytes (defaults to 8192) long, followed by a secondary request using HTTP pipelining. When request lookahead is disabled (default) we won't read any more requests, and when the first request fails due to a parsing error, we simply close the connection. However when request lookahead is enabled, it is possible to process and receive the first request, start sending the error message back to the client while we read the next request and queue it. This will allow the secondary request to be serviced by the worker thread while the connection should be closed. Waitress 3.0.1 fixes the race condition. As a workaround, disable channel_request_lookahead, this is set to 0 by default disabling this feature.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-21330
+Package: aiohttp
+Severity: LOW (3.1)
+Affected Versions:  to 3.7.4
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. In aiohttp before version 3.7.4 there is an open redirect vulnerability. A maliciously crafted link to an aiohttp-based web-server could redirect the browser to a different website. It is caused by a bug in the `aiohttp.web_middlewares.normalize_path_middleware` middleware. This security problem has been fixed in 3.7.4. Upgrade your dependency using pip as follows "pip install aiohttp >= 3.7.4". If upgrading is not an option for you, a workaround can be to avoid using `aiohttp.web_middlewares.normalize_path_middleware` in your applications.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-37276
+Package: aiohttp
+Severity: MEDIUM (5.3)
+Affected Versions: Not specified
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. aiohttp v3.8.4 and earlier are bundled with llhttp v6.0.6. Vulnerable code is used by aiohttp for its HTTP request parser when available which is the default case when installing from a wheel. This vulnerability only affects users of aiohttp as an HTTP server (ie `aiohttp.Application`), you are not affected by this vulnerability if you are using aiohttp as an HTTP client library (ie `aiohttp.ClientSession`). Sending a crafted HTTP request will cause the server to misinterpret one of the HTTP header values leading to HTTP request smuggling. This issue has been addressed in version 3.8.5. Users are advised to upgrade. Users unable to upgrade can reinstall aiohttp using `AIOHTTP_NO_EXTENSIONS=1` as an environment variable to disable the llhttp HTTP request parser implementation. The pure Python implementation isn't vulnerable.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-47627
+Package: aiohttp
+Severity: MEDIUM (5.3)
+Affected Versions:  to 3.8.6
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. The HTTP parser in AIOHTTP has numerous problems with header parsing, which could lead to request smuggling. This parser is only used when AIOHTTP_NO_EXTENSIONS is enabled (or not using a prebuilt wheel). These bugs have been addressed in commit `d5c12ba89` which has been included in release version 3.8.6. Users are advised to upgrade. There are no known workarounds for these issues.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-47641
+Package: aiohttp
+Severity: LOW (3.4)
+Affected Versions:  to 3.8.0
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. Affected versions of aiohttp have a security vulnerability regarding the inconsistent interpretation of the http protocol. HTTP/1.1 is a persistent protocol, if both Content-Length(CL) and Transfer-Encoding(TE) header values are present it can lead to incorrect interpretation of two entities that parse the HTTP and we can poison other sockets with this incorrect interpretation. A possible Proof-of-Concept (POC) would be a configuration with a reverse proxy(frontend) that accepts both CL and TE headers and aiohttp as backend. As aiohttp parses anything with chunked, we can pass a chunked123 as TE, the frontend entity will ignore this header and will parse Content-Length. The impact of this vulnerability is that it is possible to bypass any proxy rule, poisoning sockets to other users like passing Authentication Headers, also if it is present an Open Redirect an attacker could combine it to redirect random users to another website and log the request. This vulnerability has been addressed in release 3.8.0 of aiohttp. Users are advised to upgrade. There are no known workarounds for this vulnerability.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-49082
+Package: aiohttp
+Severity: MEDIUM (5.3)
+Affected Versions:  to 3.9.0
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. Improper validation makes it possible for an attacker to modify the HTTP request (e.g. insert a new header) or even create a new HTTP request if the attacker controls the HTTP method. The vulnerability occurs only if the attacker can control the HTTP method (GET, POST etc.) of the request. If the attacker can control the HTTP version of the request it will be able to modify the request (request smuggling). This issue has been patched in version 3.9.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-49081
+Package: aiohttp
+Severity: HIGH (7.2)
+Affected Versions:  to 3.9.0
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. Improper validation made it possible for an attacker to modify the HTTP request (e.g. to insert a new header) or create a new HTTP request if the attacker controls the HTTP version. The vulnerability only occurs if the attacker can control the HTTP version of the request. This issue has been patched in version 3.9.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-23334
+Package: aiohttp
+Severity: MEDIUM (5.9)
+Affected Versions: 1.0.5 to 3.9.2
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. When using aiohttp as a web server and configuring static routes, it is necessary to specify the root path for static files. Additionally, the option 'follow_symlinks' can be used to determine whether to follow symbolic links outside the static root directory. When 'follow_symlinks' is set to True, there is no validation to check if reading a file is within the root directory. This can lead to directory traversal vulnerabilities, resulting in unauthorized access to arbitrary files on the system, even when symlinks are not present.  Disabling follow_symlinks and using a reverse proxy are encouraged mitigations.  Version 3.9.2 fixes this issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-23829
+Package: aiohttp
+Severity: MEDIUM (6.5)
+Affected Versions:  to 3.9.2
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. Security-sensitive parts of the Python HTTP parser retained minor differences in allowable character sets, that must trigger error handling to robustly match frame boundaries of proxies in order to protect against injection of additional requests. Additionally, validation could trigger exceptions that were not handled consistently with processing of other malformed input.  Being more lenient than internet standards require could, depending on deployment environment, assist in request smuggling. The unhandled exception could cause excessive resource consumption on the application server and/or its logging facilities. This vulnerability exists due to an incomplete fix for CVE-2023-47627. Version 3.9.2 fixes this vulnerability.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-27306
+Package: aiohttp
+Severity: MEDIUM (6.1)
+Affected Versions:  to 3.9.4
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. A XSS vulnerability exists on index pages for static file handling. This vulnerability is fixed in 3.9.4. We have always recommended using a reverse proxy server (e.g. nginx) for serving static files. Users following the recommendation are unaffected. Other users can disable `show_index` if unable to upgrade.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-30251
+Package: aiohttp
+Severity: HIGH (7.5)
+Affected Versions:  to 3.9.4
+Description: aiohttp is an asynchronous HTTP client/server framework for asyncio and Python. In affected versions an attacker can send a specially crafted POST (multipart/form-data) request. When the aiohttp server processes it, the server will enter an infinite loop and be unable to process any further requests. An attacker can stop the application from serving requests after sending a single request. This issue has been addressed in version 3.9.4. Users are advised to upgrade. Users unable to upgrade may manually apply a patch to their systems. Please see the linked GHSA for instructions.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-32677
+Package: fastapi
+Severity: HIGH (8.2)
+Affected Versions:  to 0.65.2
+Description: FastAPI is a web framework for building APIs with Python 3.6+ based on standard Python type hints. FastAPI versions lower than 0.65.2 that used cookies for authentication in path operations that received JSON payloads sent by browsers were vulnerable to a Cross-Site Request Forgery (CSRF) attack. In versions lower than 0.65.2, FastAPI would try to read the request payload as JSON even if the content-type header sent was not set to application/json or a compatible JSON media type (e.g. application/geo+json). A request with a content type of text/plain containing JSON data would be accepted and the JSON data would be extracted. Requests with content type text/plain are exempt from CORS preflights, for being considered Simple requests. The browser will execute them right away including cookies, and the text content could be a JSON string that would be parsed and accepted by the FastAPI application. This is fixed in FastAPI 0.65.2. The request data is now parsed as JSON only if the content-type header is application/json or another JSON compatible media type like application/geo+json. It's best to upgrade to the latest FastAPI, but if updating is not possible then a middleware or a dependency that checks the content-type header and aborts the request if it is not application/json or another JSON compatible content type can act as a mitigating workaround.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-27953
+Package: fastapi
+Severity: HIGH (7.1)
+Affected Versions: Not specified
+Description: ormar is a async mini ORM for Python. Versions 0.23.0 and below are vulnerable to Pydantic validation bypass through the model constructor, allowing any unauthenticated user to skip all field validation by injecting "__pk_only__": true into a JSON request body. By injecting "__pk_only__": true into a JSON request body, an unauthenticated attacker can skip all field validation and persist unvalidated data directly to the database. A secondary __excluded__ parameter injection uses the same pattern to selectively nullify arbitrary model fields (e.g., email or role) during construction. This affects ormar's canonical FastAPI integration pattern recommended in its official documentation, enabling privilege escalation, data integrity violations, and business logic bypass in any application using ormar.Model directly as a request body parameter. This issue has been fixed in version 0.23.1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-52804
+Package: tornado
+Severity: HIGH (7.5)
+Affected Versions:  to 6.4.2
+Description: Tornado is a Python web framework and asynchronous networking library. The algorithm used for parsing HTTP cookies in Tornado versions prior to 6.4.2 sometimes has quadratic complexity, leading to excessive CPU consumption when parsing maliciously-crafted cookie headers. This parsing occurs in the event loop thread and may block the processing of other requests. Version 6.4.2 fixes the issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-47287
+Package: tornado
+Severity: HIGH (7.5)
+Affected Versions:  to 6.5.0
+Description: Tornado is a Python web framework and asynchronous networking library. When Tornado's ``multipart/form-data`` parser encounters certain errors, it logs a warning but continues trying to parse the remainder of the data. This allows remote attackers to generate an extremely high volume of logs, constituting a DoS attack. This DoS is compounded by the fact that the logging subsystem is synchronous. All versions of Tornado prior to 6.5.0 are affected. The vulnerable parser is enabled by default. Upgrade to Tornado version 6.50 to receive a patch. As a workaround, risk can be mitigated by blocking `Content-Type: multipart/form-data` in a proxy.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-67724
+Package: tornado
+Severity: MEDIUM (5.4)
+Affected Versions:  to 6.5.3
+Description: Tornado is a Python web framework and asynchronous networking library. In versions 6.5.2 and below, the supplied reason phrase is used unescaped in HTTP headers (where it could be used for header injection) or in HTML in the default error page (where it could be used for XSS) and can be exploited by passing untrusted or malicious data into the reason argument. Used by both RequestHandler.set_status and tornado.web.HTTPError, the argument is designed to allow applications to pass custom "reason" phrases (the "Not Found" in HTTP/1.1 404 Not Found) to the HTTP status line (mainly for non-standard status codes). This issue is fixed in version 6.5.3.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-67725
+Package: tornado
+Severity: HIGH (7.5)
+Affected Versions:  to 6.5.3
+Description: Tornado is a Python web framework and asynchronous networking library. In versions 6.5.2 and below, a single maliciously crafted HTTP request can block the server's event loop for an extended period, caused by the HTTPHeaders.add method. The function accumulates values using string concatenation when the same header name is repeated, causing a Denial of Service (DoS).  Due to Python string immutability, each concatenation copies the entire string, resulting in O(n²) time complexity. The severity can vary from high if max_header_size has been increased from its default, to low if it has its default value of 64KB. This issue is fixed in version 6.5.3.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-67726
+Package: tornado
+Severity: HIGH (7.5)
+Affected Versions:  to 6.5.3
+Description: Tornado is a Python web framework and asynchronous networking library. Versions 6.5.2 and below use an inefficient algorithm when parsing parameters for HTTP header values, potentially causing a DoS. The _parseparam function in httputil.py is used to parse specific HTTP header values, such as those in multipart/form-data and repeatedly calls string.count() within a nested loop while processing quoted semicolons. If an attacker sends a request with a large number of maliciously crafted parameters in a Content-Disposition header, the server's CPU usage increases quadratically (O(n²)) during parsing. Due to Tornado's single event loop architecture, a single malicious request can cause the entire server to become unresponsive for an extended period. This issue is fixed in version 6.5.3.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-31958
+Package: tornado
+Severity: HIGH (7.5)
+Affected Versions:  to 6.5.5
+Description: Tornado is a Python web framework and asynchronous networking library. In versions of Tornado prior to 6.5.5, the only limit on the number of parts in multipart/form-data is the max_body_size setting (default 100MB). Since parsing occurs synchronously on the main thread, this creates the possibility of denial-of-service due to the cost of parsing very large multipart bodies with many parts. This vulnerability is fixed in 6.5.5.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-41125
+Package: scrapy
+Severity: MEDIUM (5.7)
+Affected Versions:  to 1.8.1, 2.0.0 to 2.5.1
+Description: Scrapy is a high-level web crawling and scraping framework for Python. If you use `HttpAuthMiddleware` (i.e. the `http_user` and `http_pass` spider attributes) for HTTP authentication, all requests will expose your credentials to the request target. This includes requests generated by Scrapy components, such as `robots.txt` requests sent by Scrapy when the `ROBOTSTXT_OBEY` setting is set to `True`, or as requests reached through redirects. Upgrade to Scrapy 2.5.1 and use the new `http_auth_domain` spider attribute to control which domains are allowed to receive the configured HTTP authentication credentials. If you are using Scrapy 1.8 or a lower version, and upgrading to Scrapy 2.5.1 is not an option, you may upgrade to Scrapy 1.8.1 instead. If you cannot upgrade, set your HTTP authentication credentials on a per-request basis, using for example the `w3lib.http.basic_auth_header` function to convert your credentials into a value that you can assign to the `Authorization` header of your request, instead of defining your credentials globally using `HttpAuthMiddleware`.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-48699
+Package: selenium
+Severity: HIGH (8.4)
+Affected Versions:  to 0.1.5
+Description: fastbots is a library for fast bot and scraper development using selenium and the Page Object Model (POM) design. Prior to version 0.1.5, an attacker could modify the locators.ini locator file with python code that without proper validation it's executed and it could lead to rce. The vulnerability is in the function `def __locator__(self, locator_name: str)` in `page.py`. In order to mitigate this issue, upgrade to fastbots version 0.1.5 or above.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2009-4134
+Package: black
+Severity: UNKNOWN (5.0)
+Affected Versions: Not specified
+Description: Buffer underflow in the rgbimg module in Python 2.5 allows remote attackers to cause a denial of service (application crash) via a large ZSIZE value in a black-and-white (aka B/W) RGB image that triggers an invalid pointer dereference.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-9948
+Package: black
+Severity: CRITICAL (9.1)
+Affected Versions: 2.0 to 2.7.17, 3.5.0 to 3.5.8, 3.6.0 to 3.6.9, 3.7.0 to 3.7.4
+Description: urllib in Python 2.x through 2.7.16 supports the local_file: scheme, which makes it easier for remote attackers to bypass protection mechanisms that blacklist file: URIs, as demonstrated by triggering a urllib.urlopen('local_file:///etc/passwd') call.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-22195
+Package: black
+Severity: MEDIUM (5.4)
+Affected Versions:  to 3.1.3
+Description: Jinja is an extensible templating engine. Special placeholders in the template allow writing code similar to Python syntax. It is possible to inject arbitrary HTML attributes into the rendered HTML template, potentially leading to Cross-Site Scripting (XSS). The Jinja `xmlattr` filter can be abused to inject arbitrary HTML attribute keys and values, bypassing the auto escaping mechanism and potentially leading to XSS. It may also be possible to bypass attribute validation checks if they are blacklist-based.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-22779
+Package: black
+Severity: MEDIUM (5.3)
+Affected Versions:  to 2.4.6
+Description: BlackSheep is an asynchronous web framework to build event based web applications with Python. Prior to 2.4.6, the HTTP Client implementation in BlackSheep is vulnerable to CRLF injection. Missing headers validation makes it possible for an attacker to modify the HTTP requests (e.g. insert a new header) or even create a new HTTP request. Exploitation requires developers to pass unsanitized user input directly into headers.The server part is not affected because BlackSheep delegates to an underlying ASGI server handling of response headers. This vulnerability is fixed in 2.4.6.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-27809
+Package: black
+Severity: CRITICAL (9.1)
+Affected Versions:  to 1.12.2
+Description: psd-tools is a Python package for working with Adobe Photoshop PSD files. Prior to version 1.12.2, when a PSD file contains malformed RLE-compressed image data (e.g. a literal run that extends past the expected row size), decode_rle() raises ValueError which propagated all the way to the user, crashing psd.composite() and psd-tools export. decompress() already had a fallback that replaces failed channels with black pixels when result is None, but it never triggered because the ValueError from decode_rle() was not caught. The fix in version 1.12.2 wraps the decode_rle() call in a try/except so the existing fallback handles the error gracefully.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-31900
+Package: black
+Severity: CRITICAL (9.8)
+Affected Versions:  to 26.3.0
+Description: Black is the uncompromising Python code formatter. Black provides a GitHub action for formatting code. This action supports an option, use_pyproject: true, for reading the version of Black to use from the repository pyproject.toml. A malicious pull request could edit pyproject.toml to use a direct URL reference to a malicious repository. This could lead to arbitrary code execution in the context of the GitHub Action. Attackers could then gain access to secrets or permissions available in the context of the action. Version 26.3.0 fixes this vulnerability.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-32274
+Package: black
+Severity: HIGH (7.5)
+Affected Versions:  to 26.3.1
+Description: Black is the uncompromising Python code formatter. Prior to 26.3.1, Black writes a cache file, the name of which is computed from various formatting options. The value of the --python-cell-magics option was placed in the filename without sanitization, which allowed an attacker who controls the value of this argument to write cache files to arbitrary file system locations. Fixed in Black 26.3.1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-29510
+Package: pydantic
+Severity: LOW (3.3)
+Affected Versions:  to 1.6.2, 1.7 to 1.7.4, 1.8 to 1.8.2
+Description: Pydantic is a data validation and settings management using Python type hinting. In affected versions passing either `'infinity'`, `'inf'` or `float('inf')` (or their negatives) to `datetime` or `date` fields causes validation to run forever with 100% CPU usage (on one CPU). Pydantic has been patched with fixes available in the following versions: v1.8.2, v1.7.4, v1.6.2. All these versions are available on pypi(https://pypi.org/project/pydantic/#history), and will be available on conda-forge(https://anaconda.org/conda-forge/pydantic) soon. See the changelog(https://pydantic-docs.helpmanual.io/) for details. If you absolutely can't upgrade, you can work around this risk using a validator(https://pydantic-docs.helpmanual.io/usage/validators/) to catch these values. This is not an ideal solution (in particular you'll need a slightly different function for datetimes), instead of a hack like this you should upgrade pydantic. If you are not using v1.8.x, v1.7.x or v1.6.x and are unable to upgrade to a fixed version of pydantic, please create an issue at https://github.com/samuelcolvin/pydantic/issues requesting a back-port, and we will endeavour to release a patch for earlier versions of pydantic.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-25640
+Package: pydantic
+Severity: HIGH (7.1)
+Affected Versions: 1.34.0 to 1.51.0
+Description: Pydantic AI is a Python agent framework for building applications and workflows with Generative AI. From 1.34.0 to before 1.51.0,  a path traversal vulnerability in the Pydantic AI web UI allows an attacker to serve arbitrary JavaScript in the context of the application by crafting a malicious URL. In affected versions, the CDN URL is constructed using a version query parameter from the request URL. This parameter is not validated, allowing path traversal sequences that cause the server to fetch and serve attacker-controlled HTML/JavaScript from an arbitrary source on the same CDN, instead of the legitimate chat UI package. If a victim clicks the link or visits it via an iframe, attacker-controlled code executes in their browser, enabling theft of chat history and other client-side data. This vulnerability only affects applications that use Agent.to_web to serve a chat interface and clai web to serve a chat interface from the CLI. These are typically run locally (on localhost), but may also be deployed on a remote server. This vulnerability is fixed in 1.51.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-25580
+Package: pydantic
+Severity: HIGH (8.6)
+Affected Versions: 0.0.26 to 1.56.0
+Description: Pydantic AI is a Python agent framework for building applications and workflows with Generative AI. From 0.0.26 to before 1.56.0, aServer-Side Request Forgery (SSRF) vulnerability exists in Pydantic AI's URL download functionality. When applications accept message history from untrusted sources, attackers can include malicious URLs that cause the server to make HTTP requests to internal network resources, potentially accessing internal services or cloud credentials. This vulnerability only affects applications that accept message history from external users. This vulnerability is fixed in 1.56.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-25904
+Package: pydantic
+Severity: MEDIUM (5.8)
+Affected Versions: Not specified
+Description: The Pydantic-AI MCP Run Python tool configures the Deno sandbox with an overly permissive configuration that allows the underlying Python code to access the localhost interface of the host to perform SSRF attacks. Note - the "mcp-run-python" project is archived and unlikely to receive a fix.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-27953
+Package: pydantic
+Severity: HIGH (7.1)
+Affected Versions: Not specified
+Description: ormar is a async mini ORM for Python. Versions 0.23.0 and below are vulnerable to Pydantic validation bypass through the model constructor, allowing any unauthenticated user to skip all field validation by injecting "__pk_only__": true into a JSON request body. By injecting "__pk_only__": true into a JSON request body, an unauthenticated attacker can skip all field validation and persist unvalidated data directly to the database. A secondary __excluded__ parameter injection uses the same pattern to selectively nullify arbitrary model fields (e.g., email or role) during construction. This affects ormar's canonical FastAPI integration pattern recommended in its official documentation, enabling privilege escalation, data integrity violations, and business logic bypass in any application using ormar.Model directly as a request body parameter. This issue has been fixed in version 0.23.1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-9740
+Package: redis
+Severity: MEDIUM (6.1)
+Affected Versions: 2.0 to 2.7.17, 3.5.0 to 3.5.8, 3.6.0 to 3.6.9, 3.7.0 to 3.7.4
+Description: An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \r\n (specifically in the query string after a ? character) followed by an HTTP header or a Redis command. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2019-9947
+Package: redis
+Severity: MEDIUM (6.1)
+Affected Versions: 2.7.0 to 2.7.17, 3.5.0 to 3.5.8, 3.6.0 to 3.6.9, 3.7.0 to 3.7.4
+Description: An issue was discovered in urllib2 in Python 2.x through 2.7.16 and urllib in Python 3.x through 3.7.3. CRLF injection is possible if the attacker controls a url parameter, as demonstrated by the first argument to urllib.request.urlopen with \r\n (specifically in the path component of a URL that lacks a ? character) followed by an HTTP header or a Redis command. This is similar to the CVE-2019-9740 query string issue. This is fixed in: v2.7.17, v2.7.17rc1, v2.7.18, v2.7.18rc1; v3.5.10, v3.5.10rc1, v3.5.8, v3.5.8rc1, v3.5.8rc2, v3.5.9; v3.6.10, v3.6.10rc1, v3.6.11, v3.6.11rc1, v3.6.12, v3.6.9, v3.6.9rc1; v3.7.4, v3.7.4rc1, v3.7.4rc2, v3.7.5, v3.7.5rc1, v3.7.6, v3.7.6rc1, v3.7.7, v3.7.7rc1, v3.7.8, v3.7.8rc1, v3.7.9.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-33026
+Package: redis
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: The Flask-Caching extension through 1.10.1 for Flask relies on Pickle for serialization, which may lead to remote code execution or local privilege escalation. If an attacker gains access to cache storage (e.g., filesystem, Memcached, Redis, etc.), they can construct a crafted payload, poison the cache, and execute Python code. NOTE: a third party indicates that exploitation is extremely unlikely unless the machine is already compromised; in other cases, the attacker would be unable to write their payload to the cache and generate the required collision
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-61765
+Package: redis
+Severity: MEDIUM (6.4)
+Affected Versions: Not specified
+Description: python-socketio is a Python implementation of the Socket.IO realtime client and server. A remote code execution vulnerability in python-socketio versions prior to 5.14.0 allows attackers to execute arbitrary Python code through malicious pickle deserialization in multi-server deployments on which the attacker previously gained access to the message queue that the servers use for internal communications. When Socket.IO servers are configured to use a message queue backend such as Redis for inter-server communication, messages sent between the servers are encoded using the `pickle` Python module. When a server receives one of these messages through the message queue, it assumes it is trusted and immediately deserializes it. The vulnerability stems from deserialization of messages using Python's `pickle.loads()` function. Having previously obtained access to the message queue, the attacker can send a python-socketio server a crafted pickle payload that executes arbitrary code during deserialization via Python's `__reduce__` method. This vulnerability only affects deployments with a compromised message queue. The attack can lead to the attacker executing random code in the context of, and with the privileges of a Socket.IO server process. Single-server systems that do not use a message queue, and multi-server systems with a secure message queue are not vulnerable. In addition to making sure standard security practices are followed in the deployment of the message queue, users of the python-socketio package can upgrade to version 5.14.0 or newer, which remove the `pickle` module and use the much safer JSON encoding for inter-server messaging.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-21874
+Package: redis
+Severity: MEDIUM (5.3)
+Affected Versions: 2.10.0 to 3.5.0
+Description: NiceGUI is a Python-based UI framework. From versions v2.10.0 to 3.4.1, an unauthenticated attacker can exhaust Redis connections by repeatedly opening and closing browser tabs on any NiceGUI application using Redis-backed storage. Connections are never released, leading to service degradation when Redis hits its connection limit. NiceGUI continues accepting new connections - errors are logged but the app stays up with broken storage functionality. This issue has been patched in version 3.5.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-5252
+Package: docker
+Severity: MEDIUM (5.0)
+Affected Versions: Not specified
+Description: The command-line "safety" package for Python has a potential security issue. There are two Python characteristics that allow malicious code to “poison-pill” command-line Safety package detection routines by disguising, or obfuscating, other malicious or non-secure packages. This vulnerability is considered to be of low severity because the attack makes use of an existing Python condition, not the Safety tool itself. This can happen if: You are running Safety in a Python environment that you don’t trust. You are running Safety from the same Python environment where you have your dependencies installed. Dependency packages are being installed arbitrarily or without proper verification. Users can mitigate this issue by doing any of the following: Perform a static analysis by installing Docker and running the Safety Docker image: $ docker run --rm -it pyupio/safety check -r requirements.txt Run Safety against a static dependencies list, such as the requirements.txt file, in a separate, clean Python environment. Run Safety from a Continuous Integration pipeline. Use PyUp.io, which runs Safety in a controlled environment and checks Python for dependencies without any need to install them. Use PyUp's Online Requirements Checker.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-27482
+Package: docker
+Severity: CRITICAL (10.0)
+Affected Versions:  to 2023.3.0,  to 2023.03.1
+Description: homeassistant is an open source home automation tool. A remotely exploitable vulnerability bypassing authentication for accessing the Supervisor API through Home Assistant has been discovered. This impacts all Home Assistant installation types that use the Supervisor 2023.01.1 or older. Installation types, like Home Assistant Container (for example Docker), or Home Assistant Core manually in a Python environment, are not affected. The issue has been mitigated and closed in Supervisor version 2023.03.1, which has been rolled out to all affected installations via the auto-update feature of the Supervisor. This rollout has been completed at the time of publication of this advisory. Home Assistant Core 2023.3.0 included mitigation for this vulnerability. Upgrading to at least that version is thus advised. In case one is not able to upgrade the Home Assistant Supervisor or the Home Assistant Core application at this time, it is advised to not expose your Home Assistant instance to the internet.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-37273
+Package: docker
+Severity: HIGH (8.1)
+Affected Versions:  to 0.4.3
+Description: Auto-GPT is an experimental open-source application showcasing the capabilities of the GPT-4 language model. Running Auto-GPT version prior to 0.4.3 by cloning the git repo and executing `docker compose run auto-gpt` in the repo root uses a different docker-compose.yml file from the one suggested in the official docker set up instructions. The docker-compose.yml file located in the repo root mounts itself into the docker container without write protection. This means that if malicious custom python code is executed via the `execute_python_file` and `execute_python_code` commands, it can overwrite the docker-compose.yml file and abuse it to gain control of the host system the next time Auto-GPT is started. The issue has been patched in version 0.4.3.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-37274
+Package: docker
+Severity: HIGH (7.5)
+Affected Versions:  to 0.4.3
+Description: Auto-GPT is an experimental open-source application showcasing the capabilities of the GPT-4 language model. When Auto-GPT is executed directly on the host system via the provided run.sh or run.bat files, custom Python code execution is sandboxed using a temporary dedicated docker container which should not have access to any files outside of the Auto-GPT workspace directory.
+Before v0.4.3, the `execute_python_code` command (introduced in v0.4.1) does not sanitize the `basename` arg before writing LLM-supplied code to a file with an LLM-supplied name. This allows for a path traversal attack that can overwrite any .py file outside the workspace directory by specifying a `basename` such as `../../../main.py`. This can further be abused to achieve arbitrary code execution on the host running Auto-GPT by e.g. overwriting autogpt/main.py which will be executed outside of the docker environment meant to sandbox custom python code execution the next time Auto-GPT is started. The issue has been patched in version 0.4.3. As a workaround, the risk introduced by this vulnerability can be remediated by running Auto-GPT in a virtual machine, or another environment in which damage to files or corruption of the program is not a critical problem.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-41329
+Package: docker
+Severity: LOW (3.9)
+Affected Versions:  to 2.6.1,  to 2.35.1, 3.0.0 to 3.0.3, 2.0.0 to 2.35.1-1, 3.0.0 to 3.0.3-1
+Description: WireMock is a tool for mocking HTTP services. The proxy mode of WireMock, can be protected by the network restrictions configuration, as documented in Preventing proxying to and recording from specific target addresses. These restrictions can be configured using the domain names, and in such a case the configuration is vulnerable to the DNS rebinding attacks. A similar patch was applied in WireMock 3.0.0-beta-15 for the WireMock Webhook Extensions. The root cause of the attack is a defect in the logic which allows for a race condition triggered by a DNS server whose address expires in between the initial validation and the outbound network request that might go to a domain that was supposed to be prohibited. Control over a DNS service is required to exploit this attack, so it has high execution complexity and limited impact. This issue has been addressed in version 2.35.1 of wiremock-jre8 and wiremock-jre8-standalone, version 3.0.3 of wiremock and wiremock-standalone, version 2.6.1 of the python version of wiremock, and versions 2.35.1-1 and 3.0.3-1 of the wiremock/wiremock Docker container. Users are advised to upgrade. Users unable to upgrade should either configure firewall rules to define the list of permitted destinations or to configure WireMock to use IP addresses instead of the domain names.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-0863
+Package: docker
+Severity: HIGH (8.5)
+Affected Versions: 2.0.0 to , 2.4.0 to 
+Description: Using string formatting and exception handling, an attacker may bypass n8n's python-task-executor sandbox restrictions and run arbitrary unrestricted Python code in the underlying operating system.
+
+The vulnerability can be exploited via the Code block by an authenticated user with basic permissions and can lead to a full n8n instance takeover on instances operating under "Internal" execution mode.
+
+If the instance is operating under the  "External" execution mode (ex. n8n's official Docker image) - arbitrary code execution occurs inside a Sidecar container and not the main node, which significantly reduces the vulnerability impact.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-25153
+Package: docker
+Severity: HIGH (7.7)
+Affected Versions:  to 1.13.11, 1.14.0 to 1.14.1
+Description: Backstage is an open framework for building developer portals, and @backstage/plugin-techdocs-node provides common node.js functionalities for TechDocs. In versions of @backstage/plugin-techdocs-node prior to 1.13.11 and 1.14.1, when TechDocs is configured with `runIn: local`, a malicious actor who can submit or modify a repository's `mkdocs.yml` file can execute arbitrary Python code on the TechDocs build server via MkDocs hooks configuration. @backstage/plugin-techdocs-node versions 1.13.11 and 1.14.1 contain a fix. The fix introduces an allowlist of supported MkDocs configuration keys. Unsupported configuration keys (including `hooks`) are now removed from `mkdocs.yml` before running the generator, with a warning logged to indicate which keys were removed. Users of `@techdocs/cli` should also upgrade to the latest version, which includes the fixed `@backstage/plugin-techdocs-node` dependency. Some workarounds are available. Configure TechDocs with `runIn: docker` instead of `runIn: local` to provide container isolation, though it does not fully mitigate the risk. Limit who can modify `mkdocs.yml` files in repositories that TechDocs processes; only allow trusted contributors. Implement PR review requirements for changes to `mkdocs.yml` files to detect malicious `hooks` configurations before they are merged. Use MkDocs < 1.4.0 (e.g., 1.3.1) which does not support hooks. Note: This may limit access to newer MkDocs features. Building documentation in CI/CD pipelines using `@techdocs/cli` does not mitigate this vulnerability, as the CLI uses the same vulnerable `@backstage/plugin-techdocs-node` package.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-26216
+Package: docker
+Severity: CRITICAL (10.0)
+Affected Versions:  to 0.8.0
+Description: Crawl4AI versions prior to 0.8.0 contain a remote code execution vulnerability in the Docker API deployment. The /crawl endpoint accepts a hooks parameter containing Python code that is executed using exec(). The __import__ builtin was included in the allowed builtins, allowing unauthenticated remote attackers to import arbitrary modules and execute system commands. Successful exploitation allows full server compromise, including arbitrary command execution, file read and write access, sensitive data exfiltration, and lateral movement within internal networks.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-3361
+Package: kubernetes
+Severity: HIGH (7.7)
+Affected Versions:  to 1.28.1
+Description: A flaw was found in Red Hat OpenShift Data Science. When exporting a pipeline from the Elyra notebook pipeline editor as Python DSL or YAML, it reads S3 credentials from the cluster (ds pipeline server) and saves them in plain text in the generated output instead of an ID for a Kubernetes secret.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-41129
+Package: kubernetes
+Severity: MEDIUM (4.4)
+Affected Versions: Not specified
+Description: The ops library is a Python framework for developing and testing Kubernetes and machine charms. The issue here is that ops passes the secret content as one of the args via CLI. This issue may affect any of the charms that are using: Juju (>=3.0), Juju secrets and not correctly capturing and processing `subprocess.CalledProcessError`. This vulnerability is fixed in 2.15.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-24375
+Package: kubernetes
+Severity: MEDIUM (5.0)
+Affected Versions: Not specified
+Description: Charmed MySQL K8s operator is a Charmed Operator for running MySQL on Kubernetes. Before revision 221, the method for calling a SQL DDL or python based mysql-shell scripts can leak database users credentials. The method mysql-operator calls mysql-shell application rely on writing to a temporary script file containing the full URI, with user and password. The file can be read by a unprivileged user during the operator runtime, due it being created with read permissions (0x644). On other cases, when calling mysql cli, for one specific case when creating the operator users, the DDL contains said users credentials, which can be leak through the same mechanism of a temporary file. All versions prior to revision 221 for kubernetes and revision 338 for machine operators.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-11157
+Package: kubernetes
+Severity: HIGH (7.8)
+Affected Versions: Not specified
+Description: A high-severity remote code execution vulnerability exists in feast-dev/feast version 0.53.0, specifically in the Kubernetes materializer job located at `feast/sdk/python/feast/infra/compute_engines/kubernetes/main.py`. The vulnerability arises from the use of `yaml.load(..., Loader=yaml.Loader)` to deserialize `/var/feast/feature_store.yaml` and `/var/feast/materialization_config.yaml`. This method allows for the instantiation of arbitrary Python objects, enabling an attacker with the ability to modify these YAML files to execute OS commands on the worker pod. This vulnerability can be exploited before the configuration is validated, potentially leading to cluster takeover, data poisoning, and supply-chain sabotage.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-5215
+Package: tensorflow
+Severity: MEDIUM (5.0)
+Affected Versions:  to 1.15.2, 2.0.0 to 2.0.1
+Description: In TensorFlow before 1.15.2 and 2.0.1, converting a string (from Python) to a tf.float16 value results in a segmentation fault in eager mode as the format checks for this use case are only in the graph mode. This issue can lead to denial of service in inference/training where a malicious attacker can send a data point which contains a string instead of a tf.float16 value. Similar effects can be obtained by manipulating saved models and checkpoints whereby replacing a scalar tf.float16 value with a scalar string will trigger this issue due to automatic conversions. This can be easily reproduced by tf.constant("hello", tf.float16), if eager execution is enabled. This issue is patched in TensorFlow 1.15.1 and 2.0.1 with this vulnerability patched. TensorFlow 2.1.0 was released after we fixed the issue, thus it is not affected. Users are encouraged to switch to TensorFlow 1.15.1, 2.0.1 or 2.1.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-15193
+Package: tensorflow
+Severity: HIGH (7.1)
+Affected Versions: Not specified
+Description: In Tensorflow before versions 2.2.1 and 2.3.1, the implementation of `dlpack.to_dlpack` can be made to use uninitialized memory resulting in further memory corruption. This is because the pybind11 glue code assumes that the argument is a tensor. However, there is nothing stopping users from passing in a Python object instead of a tensor. The uninitialized memory address is due to a `reinterpret_cast` Since the `PyObject` is a Python object, not a TensorFlow Tensor, the cast to `EagerTensor` fails. The issue is patched in commit 22e07fb204386768e5bcbea563641ea11f96ceb8 and is released in TensorFlow versions 2.2.1, or 2.3.1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-15207
+Package: tensorflow
+Severity: HIGH (8.7)
+Affected Versions:  to 1.15.4, 2.0.0 to 2.0.3, 2.1.0 to 2.1.2, 2.2.0 to 2.2.1, 2.3.0 to 2.3.1
+Description: In tensorflow-lite before versions 1.15.4, 2.0.3, 2.1.2, 2.2.1 and 2.3.1, to mimic Python's indexing with negative values, TFLite uses `ResolveAxis` to convert negative values to positive indices. However, the only check that the converted index is now valid is only present in debug builds. If the `DCHECK` does not trigger, then code execution moves ahead with a negative index. This, in turn, results in accessing data out of bounds which results in segfaults and/or data corruption. The issue is patched in commit 2d88f470dea2671b430884260f3626b1fe99830a, and is released in TensorFlow versions 1.15.4, 2.0.3, 2.1.2, 2.2.1, or 2.3.1.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2020-26268
+Package: tensorflow
+Severity: MEDIUM (4.4)
+Affected Versions:  to 1.15.5, 2.0.0 to 2.0.4, 2.1.0 to 2.1.3, 2.2.0 to 2.2.2, 2.3.0 to 2.3.2
+Description: In affected versions of TensorFlow the tf.raw_ops.ImmutableConst operation returns a constant tensor created from a memory mapped file which is assumed immutable. However, if the type of the tensor is not an integral type, the operation crashes the Python interpreter as it tries to write to the memory area. If the file is too small, TensorFlow properly returns an error as the memory area has fewer bytes than what is needed for the tensor it creates. However, as soon as there are enough bytes, the above snippet causes a segmentation fault. This is because the allocator used to return the buffer data is not marked as returning an opaque handle since the needed virtual method is not overridden. This is fixed in versions 1.15.5, 2.0.4, 2.1.3, 2.2.2, 2.3.2, and 2.4.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-29513
+Package: tensorflow
+Severity: LOW (2.5)
+Affected Versions:  to 2.1.4, 2.2.0 to 2.2.3, 2.3.0 to 2.3.3, 2.4.0 to 2.4.2
+Description: TensorFlow is an end-to-end open source platform for machine learning. Calling TF operations with tensors of non-numeric types when the operations expect numeric tensors result in null pointer dereferences. The conversion from Python array to C++ array(https://github.com/tensorflow/tensorflow/blob/ff70c47a396ef1e3cb73c90513da4f5cb71bebba/tensorflow/python/lib/core/ndarray_tensor.cc#L113-L169) is vulnerable to a type confusion. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-29614
+Package: tensorflow
+Severity: HIGH (7.1)
+Affected Versions:  to 2.1.4, 2.2.0 to 2.2.3, 2.3.0 to 2.3.3, 2.4.0 to 2.4.2
+Description: TensorFlow is an end-to-end open source platform for machine learning. The implementation of `tf.io.decode_raw` produces incorrect results and crashes the Python interpreter when combining `fixed_length` and wider datatypes. The implementation of the padded version(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc) is buggy due to a confusion about pointer arithmetic rules. First, the code computes(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc#L61) the width of each output element by dividing the `fixed_length` value to the size of the type argument. The `fixed_length` argument is also used to determine the size needed for the output tensor(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc#L63-L79). This is followed by reencoding code(https://github.com/tensorflow/tensorflow/blob/1d8903e5b167ed0432077a3db6e462daf781d1fe/tensorflow/core/kernels/decode_padded_raw_op.cc#L85-L94). The erroneous code is the last line above: it is moving the `out_data` pointer by `fixed_length * sizeof(T)` bytes whereas it only copied at most `fixed_length` bytes from the input. This results in parts of the input not being decoded into the output. Furthermore, because the pointer advance is far wider than desired, this quickly leads to writing to outside the bounds of the backing data. This OOB write leads to interpreter crash in the reproducer mentioned here, but more severe attacks can be mounted too, given that this gadget allows writing to periodically placed locations in memory. The fix will be included in TensorFlow 2.5.0. We will also cherrypick this commit on TensorFlow 2.4.2, TensorFlow 2.3.3, TensorFlow 2.2.3 and TensorFlow 2.1.4, as these are also affected and still in supported range.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-41213
+Package: tensorflow
+Severity: MEDIUM (5.5)
+Affected Versions: 2.4.0 to 2.4.4, 2.5.0 to 2.5.2, 2.6.0 to 2.6.1
+Description: TensorFlow is an open source platform for machine learning. In affected versions the code behind `tf.function` API can be made to deadlock when two `tf.function` decorated Python functions are mutually recursive. This occurs due to using a non-reentrant `Lock` Python object. Loading any model which contains mutually recursive functions is vulnerable. An attacker can cause denial of service by causing users to load such models and calling a recursive `tf.function`, although this is not a frequent scenario. The fix will be included in TensorFlow 2.7.0. We will also cherrypick this commit on TensorFlow 2.6.1, TensorFlow 2.5.2, and TensorFlow 2.4.4, as these are also affected and still in supported range.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-21728
+Package: tensorflow
+Severity: HIGH (8.1)
+Affected Versions: 2.6.0 to 
+Description: Tensorflow is an Open Source Machine Learning Framework. The implementation of shape inference for `ReverseSequence` does not fully validate the value of `batch_dim` and can result in a heap OOB read. There is a check to make sure the value of `batch_dim` does not go over the rank of the input, but there is no check for negative values. Negative dimensions are allowed in some cases to mimic Python's negative indexing (i.e., indexing from the end of the array), however if the value is too negative then the implementation of `Dim` would access elements before the start of an array. The fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported range.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-23586
+Package: tensorflow
+Severity: MEDIUM (6.5)
+Affected Versions: 2.6.0 to 
+Description: Tensorflow is an Open Source Machine Learning Framework. A malicious user can cause a denial of service by altering a `SavedModel` such that assertions in `function.cc` would be falsified and crash the Python interpreter. The fix will be included in TensorFlow 2.8.0. We will also cherrypick this commit on TensorFlow 2.7.1, TensorFlow 2.6.3, and TensorFlow 2.5.3, as these are also affected and still in supported range.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2022-23594
+Package: tensorflow
+Severity: HIGH (8.8)
+Affected Versions: Not specified
+Description: Tensorflow is an Open Source Machine Learning Framework. The TFG dialect of TensorFlow (MLIR) makes several assumptions about the incoming `GraphDef` before converting it to the MLIR-based dialect. If an attacker changes the `SavedModel` format on disk to invalidate these assumptions and the `GraphDef` is then converted to MLIR-based IR then they can cause a crash in the Python interpreter. Under certain scenarios, heap OOB read/writes are possible. These issues have been discovered via fuzzing and it is possible that more weaknesses exist. We will patch them as they are discovered.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-32434
+Package: pytorch
+Severity: CRITICAL (9.8)
+Affected Versions:  to 2.6.0
+Description: PyTorch is a Python package that provides tensor computation with strong GPU acceleration and deep neural networks built on a tape-based autograd system. In version 2.5.1 and prior, a Remote Command Execution (RCE) vulnerability exists in PyTorch when loading a model using torch.load with weights_only=True. This issue has been patched in version 2.6.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-24747
+Package: pytorch
+Severity: HIGH (8.8)
+Affected Versions:  to 2.10.0
+Description: PyTorch is a Python package that provides tensor computation. Prior to version 2.10.0, a vulnerability in PyTorch's `weights_only` unpickler allows an attacker to craft a malicious checkpoint file (`.pth`) that, when loaded with `torch.load(..., weights_only=True)`, can corrupt memory and potentially lead to arbitrary code execution. Version 2.10.0 fixes the issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-54412
+Package: scikit-learn
+Severity: UNKNOWN (0.0)
+Affected Versions: Not specified
+Description: skops is a Python library which helps users share and ship their scikit-learn based models. Versions 0.11.0 and below contain a inconsistency in the OperatorFuncNode which can be exploited to hide the execution of untrusted operator methods. This can then be used in a code reuse attack to invoke seemingly safe functions and escalate to arbitrary code execution with minimal and misleading trusted types. This is fixed in version 0.12.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-54413
+Package: scikit-learn
+Severity: UNKNOWN (0.0)
+Affected Versions: Not specified
+Description: skops is a Python library which helps users share and ship their scikit-learn based models. Versions 0.11.0 and below contain an inconsistency in MethodNode, which can be exploited to access unexpected object fields through dot notation. This can be used to achieve arbitrary code execution at load time. While this issue may seem similar to GHSA-m7f4-hrc6-fwg3, it is actually more severe, as it relies on fewer assumptions about trusted types. This is fixed in version 12.0.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-54886
+Package: scikit-learn
+Severity: HIGH (8.4)
+Affected Versions: Not specified
+Description: skops is a Python library which helps users share and ship their scikit-learn based models. In versions 0.12.0 and below, the Card.get_model does not contain any logic to prevent arbitrary code execution. The Card.get_model function supports both joblib and skops for model loading. When loading .skops models, it uses skops' secure loading with trusted type validation, raising errors for untrusted types unless explicitly allowed. However, when non-.zip file formats are provided, the function silently falls back to joblib without warning. Unlike skops, joblib allows arbitrary code execution during loading, bypassing security measures and potentially enabling malicious code execution. This issue is fixed in version 0.13.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-3264
+Package: transformers
+Severity: MEDIUM (5.3)
+Affected Versions: 4.49.0 to 4.51.0
+Description: A Regular Expression Denial of Service (ReDoS) vulnerability was discovered in the Hugging Face Transformers library, specifically in the `get_imports()` function within `dynamic_module_utils.py`. This vulnerability affects versions 4.49.0 and is fixed in version 4.51.0. The issue arises from a regular expression pattern `\s*try\s*:.*?except.*?:` used to filter out try/except blocks from Python code, which can be exploited to cause excessive CPU consumption through crafted input strings due to catastrophic backtracking. This vulnerability can lead to remote code loading disruption, resource exhaustion in model serving, supply chain attack vectors, and development pipeline disruption.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-23298
+Package: transformers
+Severity: HIGH (7.8)
+Affected Versions: Not specified
+Description: NVIDIA Merlin Transformers4Rec for all platforms contains a vulnerability in a python dependency, where an attacker could cause a code injection issue. A successful exploit of this vulnerability might lead to code execution, escalation of privileges, information disclosure, and data tampering.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-14926
+Package: transformers
+Severity: HIGH (7.8)
+Affected Versions: Not specified
+Description: Hugging Face Transformers SEW convert_config Code Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Hugging Face Transformers. User interaction is required to exploit this vulnerability in that the target must convert a malicious checkpoint.
+
+The specific flaw exists within the convert_config function. The issue results from the lack of proper validation of a user-supplied string before using it to execute Python code. An attacker can leverage this vulnerability to execute code in the context of the current user. Was ZDI-CAN-28251.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-14927
+Package: transformers
+Severity: HIGH (7.8)
+Affected Versions: Not specified
+Description: Hugging Face Transformers SEW-D convert_config Code Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Hugging Face Transformers. User interaction is required to exploit this vulnerability in that the target must convert a malicious checkpoint.
+
+The specific flaw exists within the convert_config function. The issue results from the lack of proper validation of a user-supplied string before using it to execute Python code. An attacker can leverage this vulnerability to execute code in the context of the current user.
+
+. Was ZDI-CAN-28252.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-14928
+Package: transformers
+Severity: HIGH (7.8)
+Affected Versions: Not specified
+Description: Hugging Face Transformers HuBERT convert_config Code Injection Remote Code Execution Vulnerability. This vulnerability allows remote attackers to execute arbitrary code on affected installations of Hugging Face Transformers. User interaction is required to exploit this vulnerability in that the target must convert a malicious checkpoint.
+
+The specific flaw exists within the convert_config function. The issue results from the lack of proper validation of a user-supplied string before using it to execute Python code. An attacker can leverage this vulnerability to execute code in the context of the current user. Was ZDI-CAN-28253.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-43854
+Package: nltk
+Severity: HIGH (7.5)
+Affected Versions:  to 3.6.5
+Description: NLTK (Natural Language Toolkit) is a suite of open source Python modules, data sets, and tutorials supporting research and development in Natural Language Processing. Versions prior to 3.6.5 are vulnerable to regular expression denial of service (ReDoS) attacks. The vulnerability is present in PunktSentenceTokenizer, sent_tokenize and word_tokenize. Any users of this class, or these two functions, are vulnerable to the ReDoS attack. In short, a specifically crafted long input to any of these vulnerable functions will cause them to take a significant amount of execution time. If your program relies on any of the vulnerable functions for tokenizing unpredictable user input, then we would strongly recommend upgrading to a version of NLTK without the vulnerability. For users unable to upgrade the execution time can be bounded by limiting the maximum length of an input to any of the vulnerable functions. Our recommendation is to implement such a limit.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2024-39705
+Package: nltk
+Severity: CRITICAL (9.8)
+Affected Versions: Not specified
+Description: NLTK through 3.8.1 allows remote code execution if untrusted packages have pickled Python code, and the integrated data package download functionality is used. This affects, for example, averaged_perceptron_tagger and punkt.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-14009
+Package: nltk
+Severity: CRITICAL (10.0)
+Affected Versions:  to 3.9.3
+Description: A critical vulnerability exists in the NLTK downloader component of nltk/nltk, affecting all versions. The _unzip_iter function in nltk/downloader.py uses zipfile.extractall() without performing path validation or security checks. This allows attackers to craft malicious zip packages that, when downloaded and extracted by NLTK, can execute arbitrary code. The vulnerability arises because NLTK assumes all downloaded packages are trusted and extracts them without validation. If a malicious package contains Python files, such as __init__.py, these files are executed automatically upon import, leading to remote code execution. This issue can result in full system compromise, including file system access, network access, and potential persistence mechanisms.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-33230
+Package: nltk
+Severity: MEDIUM (6.1)
+Affected Versions: Not specified
+Description: NLTK (Natural Language Toolkit) is a suite of open source Python modules, data sets, and tutorials supporting research and development in Natural Language Processing. In versions 3.9.3 and prior, `nltk.app.wordnet_app` contains a reflected cross-site scripting issue in the `lookup_...` route. A crafted `lookup_<payload>` URL can inject arbitrary HTML/JavaScript into the response page because attacker-controlled `word` data is reflected into HTML without escaping. This impacts users running the local WordNet Browser server and can lead to script execution in the browser origin of that application. Commit 1c3f799607eeb088cab2491dcf806ae83c29ad8f fixes the issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-33231
+Package: nltk
+Severity: HIGH (7.5)
+Affected Versions: Not specified
+Description: NLTK (Natural Language Toolkit) is a suite of open source Python modules, data sets, and tutorials supporting research and development in Natural Language Processing. In versions 3.9.3 and prior, `nltk.app.wordnet_app` allows unauthenticated remote shutdown of the local WordNet Browser HTTP server when it is started in its default mode. A simple `GET /SHUTDOWN%20THE%20SERVER` request causes the process to terminate immediately via `os._exit(0)`, resulting in a denial of service. Commit bbaae83db86a0f49e00f5b0db44a7254c268de9b patches the issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-33236
+Package: nltk
+Severity: HIGH (8.1)
+Affected Versions: Not specified
+Description: NLTK (Natural Language Toolkit) is a suite of open source Python modules, data sets, and tutorials supporting research and development in Natural Language Processing. In versions 3.9.3 and prior, the NLTK downloader does not validate the `subdir` and `id` attributes when processing remote XML index files. Attackers can control a remote XML index server to provide malicious values containing path traversal sequences (such as `../`), which can lead to arbitrary directory creation, arbitrary file creation, and arbitrary file overwrite. Commit 89fe2ec2c6bae6e2e7a46dad65cc34231976ed8a patches the issue.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-28957
+Package: lxml
+Severity: MEDIUM (6.1)
+Affected Versions:  to 4.6.3
+Description: An XSS vulnerability was discovered in python-lxml's clean module versions before 4.6.3. When disabling the safe_attrs_only and forms arguments, the Cleaner class does not remove the formaction attribute allowing for JS to bypass the sanitizer. A remote attacker could exploit this flaw to run arbitrary JS code on users who interact with incorrectly sanitized HTML. This issue is patched in lxml 4.6.3.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-43818
+Package: lxml
+Severity: HIGH (8.2)
+Affected Versions:  to 4.6.5
+Description: lxml is a library for processing XML and HTML in the Python language. Prior to version 4.6.5, the HTML Cleaner in lxml.html lets certain crafted script content pass through, as well as script content in SVG files embedded using data URIs. Users that employ the HTML cleaner in a security relevant context should upgrade to lxml 4.6.5 to receive a patch. There are no known workarounds available.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2016-9015
+Package: pyopenssl
+Severity: LOW (3.7)
+Affected Versions: Not specified
+Description: Versions 1.17 and 1.18 of the Python urllib3 library suffer from a vulnerability that can cause them, in certain configurations, to not correctly validate TLS certificates. This places users of the library with those configurations at risk of man-in-the-middle and information leakage attacks. This vulnerability affects users using versions 1.17 and 1.18 of the urllib3 library, who are using the optional PyOpenSSL support for TLS instead of the regular standard library TLS backend, and who are using OpenSSL 1.1.0 via PyOpenSSL. This is an extremely uncommon configuration, so the security impact of this vulnerability is low.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2018-1000807
+Package: pyopenssl
+Severity: HIGH (8.1)
+Affected Versions:  to 17.5.0
+Description: Python Cryptographic Authority pyopenssl version prior to version 17.5.0 contains a CWE-416: Use After Free vulnerability in X509 object handling that can result in Use after free can lead to possible denial of service or remote code execution.. This attack appear to be exploitable via Depends on the calling application and if it retains a reference to the memory.. This vulnerability appears to have been fixed in 17.5.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2018-1000808
+Package: pyopenssl
+Severity: MEDIUM (5.9)
+Affected Versions:  to 17.5.0
+Description: Python Cryptographic Authority pyopenssl version Before 17.5.0 contains a CWE - 401 : Failure to Release Memory Before Removing Last Reference vulnerability in PKCS #12 Store that can result in Denial of service if memory runs low or is exhausted. This attack appear to be exploitable via Depends upon calling application, however it could be as simple as initiating a TLS connection. Anything that would cause the calling application to reload certificates from a PKCS #12 store.. This vulnerability appears to have been fixed in 17.5.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-27448
+Package: pyopenssl
+Severity: UNKNOWN (0.0)
+Affected Versions: Not specified
+Description: pyOpenSSL is a Python wrapper around the OpenSSL library. Starting in version 0.14.0 and prior to version 26.0.0, if a user provided callback to `set_tlsext_servername_callback` raised an unhandled exception, this would result in a connection being accepted. If a user was relying on this callback for any security-sensitive behavior, this could allow bypassing it. Starting in version 26.0.0, unhandled exceptions now result in rejecting the connection.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-27459
+Package: pyopenssl
+Severity: UNKNOWN (0.0)
+Affected Versions: Not specified
+Description: pyOpenSSL is a Python wrapper around the OpenSSL library. Starting in version 22.0.0 and prior to version 26.0.0, if a user provided callback to `set_cookie_generate_callback` returned a cookie value greater than 256 bytes, pyOpenSSL would overflow an OpenSSL provided buffer. Starting in version 26.0.0, cookie values that are too long are now rejected.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2018-5773
+Package: markdown
+Severity: MEDIUM (6.1)
+Affected Versions: Not specified
+Description: An issue was discovered in markdown2 (aka python-markdown2) through 2.3.5. The safe_mode feature, which is supposed to sanitize user input against XSS, is flawed and does not escape the input properly. With a crafted payload, XSS can be triggered, as demonstrated by omitting the final '>' character from an IMG tag.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2021-41168
+Package: markdown
+Severity: MEDIUM (6.5)
+Affected Versions:  to 1.7.0
+Description: Snudown is a reddit-specific fork of the Sundown Markdown parser used by GitHub, with Python integration added. In affected versions snudown was found to be vulnerable to denial of service attacks to its reference table implementation. References written in markdown ` [reference_name]: https://www.example.com` are inserted into a hash table which was found to have a weak hash function, meaning that an attacker can reliably generate a large number of collisions for it. This makes the hash table vulnerable to a hash-collision DoS attack, a type of algorithmic complexity attack. Further the hash table allowed for duplicate entries resulting in long retrieval times. Proofs of concept and further discussion of the hash collision issue are discussed on the snudown GHSA(https://github.com/reddit/snudown/security/advisories/GHSA-6gvv-9q92-w5f6). Users are advised to update to version 1.7.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2023-26485
+Package: markdown
+Severity: MEDIUM (5.3)
+Affected Versions:  to 0.29.0.gfm.10
+Description: cmark-gfm is GitHub's fork of cmark, a CommonMark parsing and rendering library and program in C. A polynomial time complexity issue in cmark-gfm may lead to unbounded resource exhaustion and subsequent denial of service. This CVE covers quadratic complexity issues when parsing text which leads with either large numbers of `_` characters. This issue has been addressed in version 0.29.0.gfm.10. Users are advised to upgrade. Users unable to upgrade should validate that their input comes from trusted sources.
+
+
+
+
+### Impact
+
+A polynomial time complexity issue in cmark-gfm may lead to unbounded resource exhaustion and subsequent denial of service.
+
+### Proof of concept
+
+```
+$ ~/cmark-gfm$ python3 -c 'pad = "_" * 100000; print(pad + "." + pad, end="")' | time ./build/src/cmark-gfm --to plaintext
+```
+
+Increasing the number 10000 in the above commands causes the running time to increase quadratically.
+
+### Patches
+
+This vulnerability have been patched in 0.29.0.gfm.10.
+
+### Note on cmark and cmark-gfm
+
+XXX: TBD
+
+[cmark-gfm](https://github.com/github/cmark-gfm) is a fork of [cmark](https://github.com/commonmark/cmark) that adds the GitHub Flavored Markdown extensions. The two codebases have diverged over time, but share a common core. These bugs affect both `cmark` and `cmark-gfm`. 
+
+### Credit
+
+We would like to thank @gravypod for reporting this vulnerability.
+
+### References
+
+https://en.wikipedia.org/wiki/Time_complexity
+
+### For more information
+
+If you have any questions or comments about this advisory:
+
+* Open an issue in [github/cmark-gfm](https://github.com/github/cmark-gfm)
+
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-46656
+Package: markdown
+Severity: LOW (2.9)
+Affected Versions:  to 0.14.1
+Description: python-markdownify (aka markdownify) before 0.14.1 allows large headline prefixes such as <h9999999> in addition to <h1> through <h6>. This causes memory consumption.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2026-25516
+Package: markdown
+Severity: MEDIUM (6.1)
+Affected Versions:  to 3.7.0
+Description: NiceGUI is a Python-based UI framework. The ui.markdown() component uses the markdown2 library to convert markdown content to HTML, which is then rendered via innerHTML. By default, markdown2 allows raw HTML to pass through unchanged. This means that if an application renders user-controlled content through ui.markdown(), an attacker can inject malicious HTML containing JavaScript event handlers. Unlike other NiceGUI components that render HTML (ui.html(), ui.chat_message(), ui.interactive_image()), the ui.markdown() component does not provide or require a sanitize parameter, leaving applications vulnerable to XSS attacks. This vulnerability is fixed in 3.7.0.
+--- END CVE ENTRY ---
+
+--- CVE ENTRY ---
+CVE ID: CVE-2025-69534
+Package: markdown
+Severity: HIGH (7.5)
+Affected Versions: Not specified
+Description: Python-Markdown version 3.8 contain a vulnerability where malformed HTML-like sequences can cause html.parser.HTMLParser to raise an unhandled AssertionError during Markdown parsing. Because Python-Markdown does not catch this exception, any application that processes attacker-controlled Markdown may crash. This enables remote, unauthenticated Denial of Service in web applications, documentation systems, CI/CD pipelines, and any service that renders untrusted Markdown. The issue was acknowledged by the vendor and fixed in version 3.8.1. This issue causes a remote Denial of Service in any application parsing untrusted Markdown, and can lead to Information Disclosure through uncaught exceptions.
+--- END CVE ENTRY ---

@@ -1,0 +1,6 @@
+requests>=2.31.0
+langchain
+langchain
+langchain_openai
+langchain_chroma 
+python-dotenv
