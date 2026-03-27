@@ -1,9 +1,9 @@
 import os
 import requests
-import base64
 import re
 from datetime import datetime, timezone
 from dotenv import load_dotenv
+from utils import get_default_branch, get_repo_tree
 
 load_dotenv()
 
@@ -60,32 +60,6 @@ def get_owner_and_repo_name(repo: str) -> dict:
         "owner":     parts[0],
         "repo_name": parts[1]
     }
-
-def get_default_branch(owner: str, repo: str) -> str:
-    url = f"https://api.github.com/repos/{owner}/{repo}"
-    try:
-        response = requests.get(url=url, headers=headers)
-        if response.status_code == 404:
-            print("❌ Repo not found — check owner/repo name or repo may be private")
-            return ""
-        data = response.json()
-        return data["default_branch"]
-    except requests.exceptions.ConnectionError:
-        print("❌ Connection failed — check your internet")
-        return ""
-
-def get_repo_tree(owner: str, repo: str, default_branch: str) -> dict:
-    url = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{default_branch}?recursive=1"
-    try:
-        response = requests.get(url=url, headers=headers)
-        if response.status_code == 404:
-            print("❌ Repo not found — check owner/repo name or repo may be private")
-            return {}
-        data = response.json()
-        return data
-    except requests.exceptions.ConnectionError:
-        print("❌ Connection failed — check your internet")
-        return {}
     
 def check_tree(tree: dict) -> dict:
     readme_exists = False
@@ -246,20 +220,6 @@ def check_secrets(owner: str, repo: str, tree: list) -> dict:
         "secrets_found": len(all_findings) > 0,
         "findings": all_findings
     }
-
-def get_file_content(owner: str, repo: str, file_path: str) -> str:
-    url = f"https://api.github.com/repos/{owner}/{repo}/contents/{file_path}"
-    try:
-        response = requests.get(url=url, headers=headers)
-        if response.status_code == 404:
-            print(f"❌ File not found: {file_path}")
-            return ""
-        data = response.json()
-        content = base64.b64decode(data["content"]).decode("utf-8")
-        return content
-    except requests.exceptions.ConnectionError:
-        print("❌ Connection failed — check your internet")
-        return ""
     
 def scan_for_secrets(content: str, file_path: str) -> dict:
     findings = []
