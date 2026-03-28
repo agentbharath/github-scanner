@@ -18,7 +18,7 @@ import os
 import re
 import json
 import requests
-from utils import get_file_content
+from utils import get_file_content, get_owner_and_repo
 from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from config import config
@@ -265,7 +265,8 @@ def check_deprecations(requirements: str) -> list:
 # Main Execution
 # ---------------------------------------------------------------------
 
-if __name__ == "__main__":
+def scan_vulnerabilities_and_deprecations(repo: str) -> dict:
+
     """
     Program entry point.
 
@@ -276,19 +277,26 @@ if __name__ == "__main__":
     4. Check deprecations via PyPI
     5. Print results as JSON
     """
+
+    repo_info = get_owner_and_repo(repo)
+    owner = repo_info["owner"]
+    repo_name = repo_info["repo"]
+
     requirements = get_file_content(
-        'bharathvaddineniK',
-        'test-unhealthy-repo',
+        owner,
+        repo_name,
         'requirements.txt'
     )
 
-    vulnerabilities = parse_requirements(requirements)
+    vulnerable_requirements = parse_requirements(requirements)
 
-    vulnerabilities_semantics = []
-    for req in vulnerabilities:
-        semantics = query_chroma(req)
-        vulnerabilities_semantics.append(semantics)
+    vulnerabilities = []
+    for req in vulnerable_requirements:
+        findings = query_chroma(req)
+        vulnerabilities.append(findings)
 
     deprecations = check_deprecations(requirements)
-
-    print(json.dumps(deprecations, indent=2))
+    return {
+        "vulnerabilities": vulnerabilities,
+        "deprecations": deprecations
+    }

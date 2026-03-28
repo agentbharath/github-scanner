@@ -7,12 +7,14 @@ Features:
 - Retrieve the default branch of a repository
 - Get the repository file tree recursively
 - Fetch the content of a file in the repository
+- Get the owenr name and repo name from a given url
 
 Requires a GitHub token stored in the environment variable `GITHUB_TOKEN`.
 """
 
 import requests
 import os
+import re
 import base64
 from dotenv import load_dotenv
 
@@ -101,3 +103,48 @@ def get_file_content(owner: str, repo: str, file_path: str) -> str:
     except requests.exceptions.ConnectionError:
         print("❌ Connection failed — check your internet")
         return ""
+    
+def get_owner_and_repo(repo: str) -> dict:
+    """
+    Extract GitHub owner and repository name from multiple input formats.
+
+    Supported formats:
+        https://github.com/owner/repo
+        https://github.com/owner/repo/
+        https://github.com/owner/repo.git
+        git@github.com:owner/repo.git
+        owner/repo
+
+    Args:
+        repo (str): GitHub repo URL or owner/repo string.
+
+    Returns:
+        dict: { "owner": str, "repo": str }
+
+    Raises:
+        ValueError: If repo format is invalid.
+    """
+
+    repo = repo.strip()
+
+    # Handle SSH format: git@github.com:owner/repo.git
+    ssh_match = re.search(r'github\.com[:/](.+?)/(.+?)(\.git)?$', repo)
+    if ssh_match:
+        owner, repo_name = ssh_match.group(1), ssh_match.group(2)
+        return {"owner": owner, "repo": repo_name}
+
+    # Remove protocol/domain if present
+    if "github.com" in repo:
+        repo = repo.split("github.com/")[-1]
+
+    # Remove trailing slash and .git
+    repo = repo.strip("/").replace(".git", "")
+
+    parts = repo.split("/")
+    if len(parts) != 2:
+        raise ValueError(f"Invalid GitHub repository format: {repo}")
+
+    return {
+        "owner": parts[0],
+        "repo": parts[1]
+    }

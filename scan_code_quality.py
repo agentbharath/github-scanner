@@ -3,7 +3,7 @@ import os
 import requests
 import json
 from dotenv import load_dotenv
-from utils import get_default_branch, get_repo_tree, get_file_content
+from utils import get_default_branch, get_repo_tree, get_file_content, get_owner_and_repo
 
 load_dotenv()
 
@@ -259,18 +259,17 @@ def get_function_complexity(node: ast.FunctionDef) -> int:
             complexity += len(child.values) - 1
     return complexity
 
-
-if __name__ == "__main__":
+def scan_code_quality(repo: str) -> dict:
     """
     Main entry point for analyzing a GitHub repository.
 
     Prompts the user for a GitHub repository URL, fetches all Python files,
     runs code quality analysis, and prints a JSON report.
     """
-    userInput = input("Enter your github repo name in the format of https://github.com/username/reponame: ")
-    userInputSplit = userInput.split('/')
-    owner = userInputSplit[-2]
-    repo_name = userInputSplit[-1]
+
+    repo_info = get_owner_and_repo(repo)
+    owner = repo_info["owner"]
+    repo_name = repo_info["repo"]
 
     findings = []
     default_branch = get_default_branch(owner, repo_name)
@@ -283,4 +282,4 @@ if __name__ == "__main__":
             code_finding = code_quality(source_code, path)
             findings.append(code_finding)
 
-    print("Findings: ", json.dumps(findings, indent=2))
+    return findings
