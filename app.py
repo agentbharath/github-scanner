@@ -225,6 +225,11 @@ if scan_button and repo_url:
                     with st.expander("Raw LLM Response"):
                         st.code(report["raw"])
             else:
+                if report.get("skipped_checks"):
+                    st.subheader("⏭️ Skipped Checks")
+                    for skip in report["skipped_checks"]:
+                        st.warning(skip)
+
                 display_health_score(report)
                 st.divider()
                 display_dimension_scores(report)

@@ -155,7 +155,7 @@ def query_chroma(req: dict) -> dict:
 
     results = db.similarity_search(
         query=query,
-        k=3,
+        k=5,
         filter={"package": req["name"]}
     )
 

@@ -1,0 +1,48 @@
+{
+    "flask": [
+        "PYSEC-2018-66",
+        "GHSA-562c-5r94-xh97",
+        "CVE-2023-49438",
+        "CVE-2021-33026",
+        "CVE-2021-32618",
+        "PYSEC-2023-62",
+        "CVE-2021-21241"
+    ],
+    "requests": [
+        "CVE-2014-1830",
+        "GHSA-652x-xj99-gmcc",
+        "PYSEC-2014-14",
+        "GHSA-x84v-xcm2-53pg",
+        "GHSA-9hjg-9r4m-mvj7",
+        "PYSEC-2014-13",
+        "GHSA-j8r2-6x86-q33q"
+    ],
+    "pyyaml": [
+        "CVE-2020-14343",
+        "GHSA-8q59-q68h-6hv4",
+        "PYSEC-2021-142",
+        "CVE-2020-1747",
+        "GHSA-6757-jp84-gxfx",
+        "PYSEC-2020-96"
+    ],
+    "django": [
+        "GHSA-6mx3-3vqg-hpp2",
+        "PYSEC-2018-3",
+        "GHSA-7g9h-c88w-r7h2",
+        "PYSEC-2011-12",
+        "GHSA-2mcm-79hx-8fxw",
+        "GHSA-5j2h-h5hg-3wf8",
+        "PYSEC-2011-10",
+        "GHSA-2m34-jcjv-45xf",
+        "PYSEC-2024-57",
+        "GHSA-x7q2-wr7g-xqmf"
+    ],
+    "cryptography": [
+        "GHSA-3ww4-gg4f-jr7f",
+        "PYSEC-2023-254",
+        "CVE-2023-49083",
+        "GHSA-rhm9-p9w5-fwm7",
+        "GHSA-hggm-jpg3-v476",
+        "PYSEC-2021-62"
+    ]
+}

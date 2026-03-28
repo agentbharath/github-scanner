@@ -35,6 +35,10 @@ llm = ChatOpenAI(
 @tool
 def scan_structure_tool(repo: str) -> dict:
     """
+    ALWAYS call this first. Scans repo structure, branches, commits, secrets. 
+    Check the output: if no Python files exist, do NOT call scan_code_quality. 
+    If no requirements.txt exists, do NOT call scan_vulnerabilities.
+
     LangChain tool: Repository Structure Scanner.
 
     This tool inspects the high-level structure and metadata of a GitHub repository.
@@ -53,12 +57,14 @@ def scan_structure_tool(repo: str) -> dict:
     Returns:
         dict: Structured findings about repository organization and activity.
     """
+    
     return scan_structure(repo)
 
 
 @tool
 def scan_code_quality_tool(repo: str) -> dict:
     """
+    Only call this if scan_structure found Python files in the repo tree.
     LangChain tool: Python Code Quality Analyzer.
 
     This tool downloads Python source files and analyzes them using Python's AST.
@@ -81,6 +87,7 @@ def scan_code_quality_tool(repo: str) -> dict:
 @tool
 def scan_vulnerabilities_and_deprecations_tool(repo: str) -> dict:
     """
+    Only call this if scan_structure found a requirements.txt in the repo tree.
     LangChain tool: Dependency Security Scanner.
 
     This tool checks project dependencies against a RAG index built from:
@@ -140,7 +147,12 @@ def run_agent(repo: str) -> dict:
         handle_parsing_errors=True
     )
 
-    response = executor.invoke({"input": f"Scan this GitHub repo: {repo}"})
+    response = executor.invoke({"input": f"""Scan this GitHub repo: {repo}
+                Steps:
+                1. Always run scan_structure first
+                2. Check the tree results — only run scan_code_quality if .py files exist
+                3. Check the tree results — only run scan_vulnerabilities if requirements.txt exists
+                4. Return all findings"""})
 
     tool_output = {}
 
@@ -174,10 +186,12 @@ def github_scanner_agent(repo: str) -> dict:
     """
     findings = run_agent(repo)
 
-    health_report = generate_health_report(
-        findings["structure_findings"],
-        findings["code_quality_findings"],
-        findings["vulnerability_findings"]
-    )
-
+    structure = findings.get("structure_findings", {})
+    code_quality = findings.get("code_quality_findings", [])
+    vulnerabilities = findings.get("vulnerability_findings", {
+        "vulnerabilities": [],
+        "deprecations": []
+    })
+    
+    health_report = generate_health_report(structure, code_quality, vulnerabilities)
     return health_report

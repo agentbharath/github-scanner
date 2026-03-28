@@ -363,6 +363,18 @@ def generate_health_report(structure_findings: dict,
         "vulnerability_and_deprecation_findings": vulnerability_findings
     }
 
+    if not code_quality_findings:
+        findings["skipped_checks"] = findings.get("skipped_checks", [])
+        findings["skipped_checks"].append(
+            "Code quality analysis skipped — no Python files found in repository"
+        )
+
+    if not vulnerability_findings.get("vulnerabilities"):
+        findings["skipped_checks"] = findings.get("skipped_checks", [])
+        findings["skipped_checks"].append(
+            "Vulnerability scan skipped — no requirements.txt found"
+        )
+
     context = get_rag_context(structure_findings,code_quality_findings)
     dimension_scores = calculate_dimension_scores(structure_findings, code_quality_findings, vulnerability_findings)
     health_score = sum(d["weighted_score"] for d in dimension_scores.values())
@@ -415,6 +427,12 @@ def generate_health_report(structure_findings: dict,
     9. For RECOMMENDATION: Give step-by-step actions, not vague advice. Not "update dependencies" but "Run: pip install flask==3.1.3. Review breaking changes at https://flask.palletsprojects.com/changes/. Test all routes after upgrade."
         - BAD: "Add docstrings to improve documentation"
         - GOOD: "Add PEP 257 compliant docstrings to hello() in app.py (line 5) and all 13 functions in test.py. Use this format: first line as a summary ending in a period, blank line, then document arguments and return values. Start with the most complex functions: scan_structure (36 lines, complexity 4) and check_tree (46 lines, complexity 7)."
+    10. Create a SEPARATE finding for EVERY issue type found. Do not skip any. 
+        If there are unused imports — create a finding.
+        If there are dead functions — create a finding.
+        If there are missing docstrings — create a finding.
+        If there are high complexity functions — create a finding.
+        Do not combine multiple issue types into one finding.
     
     CRITICAL: If your evidence says "best practices state..." or your recommendation says "update dependencies" without specifics, your output is REJECTED. Be precise or don't include the finding.
     
@@ -448,9 +466,13 @@ def generate_health_report(structure_findings: dict,
             content = content.split("```")[1]
             if content.startswith("json"):
                 content = content[4:]
-        return json.loads(content)
+        report = json.loads(content)
+        report["skipped_checks"] = findings.get("skipped_checks", [])
+        return report
     except json.JSONDecodeError:
         try:
-            return json.loads(content.replace("'", '"'))
+            report = json.loads(content.replace("'", '"'))
+            report["skipped_checks"] = findings.get("skipped_checks", [])
+            return report
         except:
             return {"error": "Failed to parse LLM response", "raw": response.content}

@@ -100,6 +100,8 @@ def check_tree(tree: dict) -> dict:
     ci_config_exists = False
     test_directory_exists = False
     env_file_exists = False
+    has_python_files = False
+    has_requirements_txt = False
 
     tests_paths = ["tests/", "test/", "spec/", "__tests__/"]
     config_files = [".github/workflows/", ".travis.yml", ".circleci/", "jenkinsfile", ".gitlab-ci.yml"]
@@ -115,6 +117,10 @@ def check_tree(tree: dict) -> dict:
             license_exists = True
         if "gitignore" in path:
             gitignore_exists = True
+        if path.endswith(".py"):
+            has_python_files = True
+        if path == "requirements.txt":
+            has_requirements_txt = True
         if any(test in path for test in tests_paths):
             test_directory_exists = True
         if any(test in path for test in config_files):
@@ -126,7 +132,9 @@ def check_tree(tree: dict) -> dict:
         "gitignore": {"exists": gitignore_exists},
         "ci_config": {"exists": ci_config_exists},
         "test_directory": {"exists": test_directory_exists},
-        "env_files": {"exists": env_file_exists}
+        "env_files": {"exists": env_file_exists},
+        "python_files": {"exists": has_python_files},
+        "requirements_txt": {"exists": has_requirements_txt}
     }
 
 
