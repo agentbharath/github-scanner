@@ -16,8 +16,7 @@ headers = {
 # Nodes that increase code depth/complexity
 CONTROL_NODES = (ast.If, ast.For, ast.While, ast.With, ast.AsyncWith, ast.Try)
 
-
-def code_quality(code="", filename=""):
+def code_quality(code="", filename="", references=()):
     """
     Analyze Python code for various quality metrics.
 
@@ -42,7 +41,6 @@ def code_quality(code="", filename=""):
     tree = ast.parse(code, filename, mode="exec")
     imports = []
     functions = []
-    references = []
 
     unused_imports = []
     dead_functions = []
@@ -84,10 +82,8 @@ def code_quality(code="", filename=""):
             imports.append(get_import_info(node))
         elif isinstance(node, ast.ImportFrom):
             imports.append(get_module_info(node))
-        elif isinstance(node, ast.Name):
-            references.append(get_name_info(node))
 
-    ref_names = [ref["name"] for ref in references]
+    ref_names = references
 
     # Identify unused imports
     for imp in imports:
@@ -260,26 +256,38 @@ def get_function_complexity(node: ast.FunctionDef) -> int:
     return complexity
 
 def scan_code_quality(repo: str) -> dict:
-    """
-    Main entry point for analyzing a GitHub repository.
-
-    Prompts the user for a GitHub repository URL, fetches all Python files,
-    runs code quality analysis, and prints a JSON report.
-    """
-
     repo_info = get_owner_and_repo(repo)
     owner = repo_info["owner"]
     repo_name = repo_info["repo"]
 
-    findings = []
     default_branch = get_default_branch(owner, repo_name)
     repo_tree = get_repo_tree(owner, repo_name, default_branch)
 
+    # Get all Python file paths
+    python_files = []
     for tree in repo_tree["tree"]:
-        path = tree["path"]
-        if path.lower().endswith('.py'):
-            source_code = get_file_content(owner, repo_name, path)
-            code_finding = code_quality(source_code, path)
-            findings.append(code_finding)
+        if tree["path"].lower().endswith('.py'):
+            python_files.append(tree["path"])
+
+    # PASS 1: Collect global references across ALL files
+    global_references = set()
+    file_sources = {}  # cache source code so we don't fetch twice
+
+    for path in python_files:
+        source = get_file_content(owner, repo_name, path)
+        file_sources[path] = source
+        tree = ast.parse(source, path)
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Name):
+                global_references.add(node.id)
+            elif isinstance(node, ast.ImportFrom):
+                for alias in node.names:
+                    global_references.add(alias.name)
+
+    # PASS 2: Analyze each file using global references
+    findings = []
+    for path in python_files:
+        code_finding = code_quality(file_sources[path], path, global_references)
+        findings.append(code_finding)
 
     return findings
