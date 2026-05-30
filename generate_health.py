@@ -454,6 +454,16 @@ def generate_health_report(structure_findings: dict,
     - documentation: missing README, missing LICENSE, missing docstrings
     - repo_hygiene: no .gitignore, no CI/CD, no test directory, stale branches, inactive commits
     - deprecations: outdated packages, unmaintained packages
+
+    CROSS-SIGNAL INSIGHTS: Check ALL of these combinations and include any that apply:
+    - Vulnerabilities found + no CI/CD = upgrades are risky without automated tests
+    - Vulnerabilities found + no test directory = security fixes can't be verified
+    - Secrets found + no .gitignore = secrets likely committed accidentally
+    - Missing README + missing docstrings = onboarding new developers is very difficult
+    - High complexity + missing docstrings = maintenance nightmare
+    - Outdated dependencies + no CI/CD = can't safely upgrade without breaking things
+
+    Include at least 2 insights. Do not skip applicable combinations.
     """
 
     response = llm.invoke(
